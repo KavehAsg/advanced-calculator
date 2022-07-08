@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --theme-color: #fff ;
+    --primary-color: #1565c0;
+    --secondry-color: #000;
+    --number-color: #c5cae9;
+    --hint-color: #e0e0e0;
+}
+
+body {
+    background-color: var(--theme-color);
+}
+
