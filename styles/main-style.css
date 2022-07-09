@@ -16,6 +16,7 @@
 
 body {
     background-color: var(--theme-color);
+    padding: 0 32px;
 }
 
 .ham-menu{
@@ -28,7 +29,7 @@ body {
     display: inline-block;
     width: 18px;
     height: 2px;
-    border-radius: 1px;
+    border-radius: 2px;
     background-color: var(--secondry-color);
 }
 
@@ -42,7 +43,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 64px;
+    padding: 16px 0px;
 }
 
 #theme-toogle{
@@ -70,11 +71,15 @@ h1{
 
 .ham-list{
     width: 120px;
-    margin: 4px 0 0 64px;
+    margin: 4px 0 0 0;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    transform: scaleX(0);
+    transform: translateX(-200px);
+}
+
+.ham-list.actived{
+    transform: translateX(0);
 }
 
 .hint-list{
@@ -96,9 +101,9 @@ h1{
 }
 
 .ham-menu.active :nth-child(1){
-    transform: translateY(-3px);
+    transform: translateY(3px) rotate(-45deg);
 }
 
 .ham-menu.active :nth-child(3){
-    transform: translateY(3px) rotate(45deg);
+    transform: translateY(-9px) rotate(45deg);
 }
