@@ -19,6 +19,7 @@ body {
     padding: 0 32px;
 }
 
+/* navbar style */
 .ham-menu{
     display: flex;
     flex-direction: column;
@@ -71,7 +72,6 @@ h1{
 
 .ham-list{
     width: 120px;
-    margin: 4px 0 0 0;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -107,3 +107,4 @@ h1{
 .ham-menu.active :nth-child(3){
     transform: translateY(-9px) rotate(45deg);
 }
+/* navbar style end */
