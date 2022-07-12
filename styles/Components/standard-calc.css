@@ -1,0 +1,60 @@
+/* keys and display */
+
+
+.action-section {
+    
+    max-height: calc(100vh - 60px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.display {
+    width: 335px;
+    height: 130px;
+    font-size: 3rem;
+    padding: 20px;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+}
+
+.key {
+    border-radius: 50%;
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.key:hover {
+    background-color: #d7ccc8;
+    color: #484848;
+}
+
+.keys {
+
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(4, 50px);
+    grid-template-rows: repeat(5, 50px);
+}
+
+.numbers {
+    background-color: #484848;
+}
+
+.operator,
+.equal {
+    background-color: #ffb04c;
+}
+
+.clear-all,
+.clear-last {
+    background-color: #bdb9b7;
+}

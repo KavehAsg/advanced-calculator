@@ -1,3 +1,9 @@
+@import url(./Components/components.css);
+
+
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -27,7 +33,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 4px;
-    width:40px;
+    width: 40px;
     height: 30px;
     display: flex;
     justify-content: center;
@@ -140,7 +146,7 @@ main {
 
 /* history section */
 .history-container {
-    background-image: linear-gradient(to left, var(--theme-color), var(--panel-color) ,var(--theme-color));
+    background-image: linear-gradient(to left, var(--theme-color), var(--panel-color), var(--theme-color));
     width: 320px;
     max-height: calc(100vh - 60px);
     display: flex;
@@ -185,16 +191,16 @@ main {
     align-items: center;
 }
 
-.history::-webkit-scrollbar{
+.history::-webkit-scrollbar {
     width: 5px;
 }
 
-.history::-webkit-scrollbar-thumb{
+.history::-webkit-scrollbar-thumb {
     background-color: var(--primary-color);
     border-radius: 2px;
 }
 
-.history-boxbtn{
+.history-boxbtn {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -216,6 +222,7 @@ main {
     height: 20px;
     margin-left: 3px;
 }
+
 .history-box {
     display: flex;
     justify-content: space-around;
@@ -226,7 +233,7 @@ main {
     margin: 8px 0;
 }
 
-.history-box:hover{
+.history-box:hover {
     background-color: var(--number-color);
 }
 
@@ -234,3 +241,6 @@ main {
     width: 200px;
     font-size: 1.2rem;
 }
+
+/* history section end */
+
