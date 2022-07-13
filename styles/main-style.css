@@ -16,9 +16,8 @@
     --theme-color: #fff;
     --primary-color: #1565c0;
     --secondry-color: #000;
-    --number-color: #bdbdbd;
-    --hint-color: #e0e0e0;
-    --panel-color: #eeeeee;
+    --action-color: #bdbdbd;
+    --back-color: #eeeeee;
 }
 
 body {
@@ -70,18 +69,17 @@ nav {
 .theme-btn {
     width: 25px;
     height: 25px;
-    background: url(../icons/dark\ mode_icon.svg);
     border-radius: 50%;
     position: relative;
     cursor: pointer;
     transition: all 0.5s ease-in-out;
-    /* filter: drop-shadow(0px 0px 3px #000); */
+    font-size: 1.5rem;
+    color: var(--secondry-color);
 }
 
 #theme-toogle:checked+.theme-btn {
-    transform: rotate(360deg);
-    background: url(../icons/light\ mode_icon.svg);
-    /* filter: drop-shadow(0px 0px 10px #fff); */
+    transform: rotate(180deg);
+    color: var(--secondry-color);
 }
 
 h1 {
@@ -134,7 +132,7 @@ main {
 }
 
 .hint-list {
-    color: var(--number-color);
+    color: var(--action-color);
     margin-top: 10px;
 }
 
@@ -151,6 +149,7 @@ main {
 
 /* history section */
 .history-container {
+    /* background-color: var(--back-color); */
     max-width: 300px;
     max-height: calc(100vh - 60px);
     display: flex;
@@ -170,15 +169,18 @@ main {
 }
 
 .history-menubtn {
-    background: url(../icons/arrow_icon.svg) center/contain no-repeat fixed;
     width: 17px;
     height: 17px;
     border-radius: 50%;
     place-content: center;
+    color: var(--secondry-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .history-menubtn:hover {
-    background-color: var(--panel-color);
+    background-color: var(--back-color);
 }
 
 .history-menubtn.active {
@@ -219,13 +221,6 @@ main {
     cursor: pointer;
 }
 
-.copy {
-    background: url(../icons/edit_icon.svg);
-    width: 20px;
-    cursor: pointer;
-    height: 20px;
-    margin-left: 3px;
-}
 
 .history-box {
     display: flex;
@@ -235,10 +230,11 @@ main {
     width: 260px;
     border-radius: 5px;
     margin: 8px 0;
+    color: var(--secondry-color);
 }
 
 .history-box:hover {
-    background-color: var(--hint-color);
+    background-color: var(--back-color);
 }
 
 .history-box p {

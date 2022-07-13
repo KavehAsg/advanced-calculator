@@ -23,7 +23,7 @@
     display: flex;
     justify-content: end;
     align-items: flex-end;
-    /* background-color: aqua; */
+    color: var(--secondry-color);
 }
 
 .key {
@@ -33,24 +33,25 @@
     justify-content: center;
     align-items: center;
     transition: all 0.3s;
+    transition: all 0.3s linear;
     cursor: pointer;
 }
 
 .key:hover {
-    color: #484848;
+    -webkit-box-shadow: 0px 0px 4px 1px var(--secondry-color);
+    box-shadow: 0px 0px 4px 1px var(--secondry-color);
 }
 
 .keys {
-    /* background-color: antiquewhite; */
     font-size: 1.5rem;
     display: grid;
     grid-gap: 5px;
-    grid-template-columns: repeat(4 , 80px);
-    grid-template-rows: repeat(5 , 80px);
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: repeat(5, 80px);
 }
 
 .numbers {
-    color: var(--number-color) ;
+    color: var(--secondry-color);
 }
 
 .operator,
@@ -60,5 +61,5 @@
 
 .clear-all,
 .clear-last {
-    color: var(--secondry-color);
+    color: var(--action-color);
 }
