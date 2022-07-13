@@ -2,13 +2,16 @@
 
 
 .action-section {
-    
-    max-height: calc(100vh - 60px);
-    margin: 0 auto;
+    min-width: 100%;
+    max-height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 0;
+    position: relative;
+    margin-left: 170px;
+    padding-bottom: 16px;
 }
 
 .display {
@@ -20,6 +23,7 @@
     display: flex;
     justify-content: end;
     align-items: flex-end;
+    /* background-color: aqua; */
 }
 
 .key {
@@ -33,28 +37,28 @@
 }
 
 .key:hover {
-    background-color: #d7ccc8;
     color: #484848;
 }
 
 .keys {
-
+    /* background-color: antiquewhite; */
+    font-size: 1.5rem;
     display: grid;
     grid-gap: 5px;
-    grid-template-columns: repeat(4, 50px);
-    grid-template-rows: repeat(5, 50px);
+    grid-template-columns: repeat(4 , 80px);
+    grid-template-rows: repeat(5 , 80px);
 }
 
 .numbers {
-    background-color: #484848;
+    color: var(--number-color) ;
 }
 
 .operator,
 .equal {
-    background-color: #ffb04c;
+    color: var(--primary-color);
 }
 
 .clear-all,
 .clear-last {
-    background-color: #bdb9b7;
+    color: var(--secondry-color);
 }
