@@ -17,7 +17,7 @@
     --primary-color: #1565c0;
     --secondry-color: #000;
     --action-color: #bdbdbd;
-    --back-color: #eeeeee;
+    --back-color: #eeeeeed3;
 }
 
 body {
@@ -149,11 +149,11 @@ main {
 
 /* history section */
 .history-container {
-    /* background-color: var(--back-color); */
     max-width: 300px;
     max-height: calc(100vh - 60px);
     display: flex;
     justify-content: space-between;
+    backdrop-filter: blur(5px);
     align-items: center;
     gap: 5px;
     padding: 16px 8px;
@@ -161,7 +161,7 @@ main {
     transform: translateX(-24px);
     z-index: 2;
     position: relative;
-    transition: all 0.3s linear;
+    transition: all 0.2s linear;
 }
 
 .history-container.active {
@@ -215,7 +215,6 @@ main {
 }
 
 .delete {
-    background: url(../icons/trash_icon.svg);
     width: 20px;
     height: 20px;
     cursor: pointer;
