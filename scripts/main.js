@@ -3,9 +3,8 @@ const hamList = document.querySelector(".ham-list");
 const historyBtn = document.querySelector(".history-menubtn");
 const historyContainer = document.querySelector(".history-container")
 const themeBtn = document.querySelector("#theme-toogle");
-// import { exportData } from "./standard-calc.js";
 
-function creatHistory(exportData) {
+function creatHistory(exportData) {  //creat history box in history menu
     const historyBox = document.createElement("div");
     historyBox.classList.add("history-box");
     historyBox.innerHTML = `
@@ -16,24 +15,22 @@ function creatHistory(exportData) {
     `;
     document.querySelector(".history").appendChild(historyBox);
 }
-// creatHistory(exportData);
 
 
-
-function hamAction() {
+function hamAction() { // perform action to hamburger menu
     hamMenu.classList.toggle("active");
     hamList.classList.toggle("active");
 }
 hamMenu.addEventListener("click", hamAction);
 
 
-historyBtn.addEventListener("click", () => {
+historyBtn.addEventListener("click", () => { //action for history menu 
     historyContainer.classList.toggle("active");
     historyBtn.classList.toggle("active");
 });
 
 
-function setTeheme() {
+function setTheme() { // switch for dark mode
     if (themeBtn.checked) {
         document.documentElement.style.setProperty('--theme-color', '#000');
         document.documentElement.style.setProperty('--primary-color', '#f4511e');
@@ -50,4 +47,73 @@ function setTeheme() {
         document.querySelector(".theme-btn").innerHTML = `<i class="fa-regular fa-moon"></i>`
     }
 }
-themeBtn.addEventListener("click", setTeheme);
+themeBtn.addEventListener("click", setTheme);
+
+// end of menues and navbar actions
+//--------------------------------------------------------------------//
+// standard calculator =>
+
+const display = document.querySelector(".display");
+const numbers = document.querySelectorAll(".numbers");
+const clearAll = document.querySelector(".clear-all");
+const clearLast = document.querySelector(".clear-last");
+const equal = document.querySelector("#equal");
+const operator = document.querySelectorAll(".operator");
+
+const calcPattern = /^[-+]?[0-9]+([-+*/%.]+[-+]?[0-9]+)*$/;
+let resultFlag = 0;
+
+function inputNum(event) {
+    const inputText = event.target.innerText;
+    resultFlag == 1 ? display.value = inputText : display.value += inputText; //print new numbers if = already pressed
+    resultFlag = 0;
+}
+numbers.forEach(item => item.addEventListener("click", inputNum));
+
+
+function inputOperator(event) {
+    const inputOperator = event.target.innerText;
+    if(inputOperator === "-" && display.value === ""){
+        display.value = inputOperator;
+        resultFlag = 0;
+    }
+    else if (calcPattern.test(display.value)) {
+        display.value += inputOperator;
+        resultFlag = 0;
+    }
+    else if (!calcPattern.test(display.value) && display.value !== "-") {
+        display.classList.toggle("error");
+        setTimeout(() => {
+            display.classList.toggle("error");
+        }, 350);
+    }
+}
+operator.forEach(item => item.addEventListener("click", inputOperator));
+
+
+function result() {
+    if (calcPattern.test(display.value)) {
+        display.value = eval(display.value);
+        resultFlag = 1; // set flag to show = has pressed
+    } else {
+        display.classList.toggle("error");
+        setTimeout(() => {
+            display.classList.toggle("error");
+        }, 800);
+    }
+}
+equal.addEventListener("click", result);
+
+
+function clearAllFunc() {
+    display.value = '';
+    resultFlag = 0;
+}
+clearAll.addEventListener("click", clearAllFunc);
+
+
+function clearLastFunc() {
+    display.value = display.value.substring(0, display.value.length - 1);
+    resultFlag = 0;
+}
+clearLast.addEventListener("click", clearLastFunc);
