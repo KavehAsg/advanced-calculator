@@ -4,11 +4,29 @@ const historyBtn = document.querySelector(".history-menubtn");
 const historyContainer = document.querySelector(".history-container")
 const themeBtn = document.querySelector("#theme-toogle");
 
-function creatHistory(exportData) {  //creat history box in history menu
+function firstCreatHistory() {  //creat history box in history menu from local storage
+    Object.keys(localStorage).forEach(key => {
+        const items = JSON.parse(localStorage.getItem(key));
+        items.forEach(item => {
+            const historyBox = document.createElement("div");
+            historyBox.classList.add("history-box");
+            historyBox.innerHTML = `
+            <p>${item}</p>
+            <div class="history-boxbtn">
+                <div class="delete"><i class="fa-regular fa-trash-can"></i></div>
+            </div>
+            `;
+            document.querySelector(".history").appendChild(historyBox);
+        })
+    });
+}
+
+
+function creatHistory(phrase) {
     const historyBox = document.createElement("div");
     historyBox.classList.add("history-box");
     historyBox.innerHTML = `
-    <p>${exportData}</p>
+    <p>${phrase}</p>
     <div class="history-boxbtn">
         <div class="delete"><i class="fa-regular fa-trash-can"></i></div>
     </div>
@@ -16,6 +34,16 @@ function creatHistory(exportData) {  //creat history box in history menu
     document.querySelector(".history").appendChild(historyBox);
 }
 
+function setLocalStorage(data){
+    historyArray.push(data);
+    if (localStorage.getItem("S-D") == null) {
+        localStorage.setItem("S-D", JSON.stringify(historyArray));
+    } else {
+        historyArray = JSON.parse(localStorage.getItem("S-D"));
+        historyArray.push(data);
+        localStorage.setItem("S-D", JSON.stringify(historyArray));
+    }
+}
 
 function hamAction() { // perform action to hamburger menu
     hamMenu.classList.toggle("active");
@@ -62,6 +90,8 @@ const operator = document.querySelectorAll(".operator");
 
 const calcPattern = /^[-+]?[0-9]+([-+*/%.]+[-+]?[0-9]+)*$/;
 let resultFlag = 0;
+let historyArray = [];
+firstCreatHistory(); //creat history boxes at the begining
 
 function inputNum(event) {
     const inputText = event.target.innerText;
@@ -73,7 +103,7 @@ numbers.forEach(item => item.addEventListener("click", inputNum));
 
 function inputOperator(event) {
     const inputOperator = event.target.innerText;
-    if(inputOperator === "-" && display.value === ""){
+    if (inputOperator === "-" && display.value === "") {
         display.value = inputOperator;
         resultFlag = 0;
     }
@@ -93,6 +123,11 @@ operator.forEach(item => item.addEventListener("click", inputOperator));
 
 function result() {
     if (calcPattern.test(display.value)) {
+        const historyPhrase = `${display.value} = ${eval(display.value)}`;
+        if(display.value != eval(display.value)){
+            setLocalStorage(historyPhrase);
+            creatHistory(historyPhrase);
+        }
         display.value = eval(display.value);
         resultFlag = 1; // set flag to show = has pressed
     } else {
@@ -117,3 +152,4 @@ function clearLastFunc() {
     resultFlag = 0;
 }
 clearLast.addEventListener("click", clearLastFunc);
+
