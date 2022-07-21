@@ -47,8 +47,8 @@
 }
 
 .key:hover {
-    -webkit-box-shadow: 0px 0px 2px 1px var(--secondry-color);
-    box-shadow: 0px 0px 2px 1px var(--secondry-color);
+    -webkit-box-shadow: 0px 0px 3px 0px var(--secondry-color);
+    box-shadow: 0px 0px 3px 0px var(--secondry-color);
 }
 
 .keys {

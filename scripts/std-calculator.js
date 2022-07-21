@@ -5,10 +5,11 @@ const clearLast = document.querySelector(".clear-last");
 const equal = document.querySelector("#equal");
 const operator = document.querySelectorAll(".operator");
 
+
 const calcPattern = /^[-+]?[0-9]+([-+*/%.]+[-+]?[0-9]+)*$/;
 let resultFlag = 0;
 
-import {creatHistory , setLocalStorage} from "./main.js";
+import {creatHistory , setLocalStorage } from "./main.js";
 
 function inputNum(event) {
     const inputText = event.target.innerText;

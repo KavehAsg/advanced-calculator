@@ -146,7 +146,7 @@ main {
 
 /* history section */
 .history-container {
-    max-width: 300px;
+    max-width: 310px;
     max-height: calc(100vh - 60px);
     display: flex;
     justify-content: space-between;
