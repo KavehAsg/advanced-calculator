@@ -7,7 +7,7 @@ const title = document.querySelector("h1");
 const actionSection = document.querySelector(".action-section");
 let deleteHistoryBtn = document.querySelectorAll(".delete");
 
-export { creatHistory, setLocalStorage, removeLocalStorage, deleteHistoryBtn };
+export { creatHistory, setLocalStorage , title , actionSection };
 
 function selectNewBtns() {
     deleteHistoryBtn = document.querySelectorAll(".delete");
@@ -94,39 +94,3 @@ function setTheme() { // switch for dark mode
 themeBtn.addEventListener("click", setTheme);
 
 // end of menues and navbar actions
-
-document.querySelector("#Standard").addEventListener("click" , openStdCalc); // open Standard calculator from menu
-function openStdCalc(){
-    title.innerText = "Sstandard Calculator";
-    actionSection.innerHTML = `
-    <input class="display" type="text" placeholder="0">
-                <div class="keys">
-    
-                    <div class="key clear-all">AC</div>
-                    <div class="key clear-last">C</div>
-                    <div class="key operator" id="rem">%</div>
-                    <div class="key operator" id="division">/</div>
-    
-                    <div class="key numbers">7</div>
-                    <div class="key numbers">8</div>
-                    <div class="key numbers">9</div>
-                    <div class="key operator" id="multi">*</div>
-    
-                    <div class="key numbers">4</div>
-                    <div class="key numbers">5</div>
-                    <div class="key numbers">6</div>
-                    <div class="key operator" id="minous">-</div>
-    
-                    <div class="key numbers">1</div>
-                    <div class="key numbers">2</div>
-                    <div class="key numbers">3</div>
-                    <div class="key operator" id="plus">+</div>
-    
-                    <div class="key numbers" style="grid-column: 1 / 3 ; border-radius: 40px;">0</div>
-                    <div class="key numbers">.</div>
-                    <div class="key equal" id="equal">=</div>
-    
-                </div>
-    `;
-}
-
