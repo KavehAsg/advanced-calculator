@@ -7,6 +7,7 @@
 .first-section , .second-section{
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 70px;
 }
 
@@ -28,7 +29,7 @@
 }
 
 .first-input , .second-input{
-    width: 200px;
+    width: 250px;
     height: 50px;
     padding: 5px;
     outline: none;
@@ -36,7 +37,7 @@
     border-bottom: solid 1px var(--secondry-color);
     background-color: var(--theme-color);
     color: var(--secondry-color);
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 :is(.first-input , .second-input)::placeholder{

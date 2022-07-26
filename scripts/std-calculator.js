@@ -1,11 +1,8 @@
 import { creatHistory, setLocalStorage , title , actionSection} from "./main.js";
 
-const stdMenu = document.querySelector("#Standard");
-
-
-stdMenu.addEventListener("click", openStdCalc); // open Standard calculator from menu
+document.querySelector("#Standard").addEventListener("click", openStdCalc); // open Standard calculator from menu
 function openStdCalc() {
-    title.innerText = "Sstandard Calculator";
+    title.innerText = "Standard Calculator";
     actionSection.className = "action-section std"
     actionSection.innerHTML = `
     <input class="display" type="text" placeholder="0">
