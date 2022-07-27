@@ -75,7 +75,7 @@ function microToMile(data) {
 // convert Milimeter to x
 export {
     miliToNanometer, miliToMicrometer, miliToCentimeter, miliToMeter, miliToKilometer,
-    miliToInche, miliTofeet, miliToYard, miliToMile
+    miliToInche, miliTofeet as miliTofeet, miliToYard, miliToMile
 };
 
 

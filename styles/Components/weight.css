@@ -1,4 +1,4 @@
-.weight{
+.length{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -29,7 +29,7 @@
 }
 
 .first-input , .second-input{
-    width: 250px;
+    width: 350px;
     height: 50px;
     padding: 5px;
     outline: none;
