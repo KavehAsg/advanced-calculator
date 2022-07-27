@@ -54,8 +54,8 @@ function inputNum(event) {
     if (inputText !== ".") {
         resultFlag == 1 ? display.value = inputText : display.value += inputText; //print new numbers if = already pressed
     }
-    else {
-        inputText.lastIndexOf(".") == (inputText.length - 1) ? null : display.value += inputText;
+    else if (inputText === "."){
+        display.value.lastIndexOf(".") == (display.value.length - 1) ? null : display.value += inputText;
     }
     resultFlag = 0;
 }
@@ -110,7 +110,3 @@ function clearLastFunc() {
 }
 clearLast.addEventListener("click", clearLastFunc);
 
-const data = "salam";
-// console.log(data.length);
-// console.log(data.lastIndexOf("."));
-data.lastIndexOf(".") == data.length - 1 ? console.log("yes") : console.log("no");
