@@ -4,10 +4,10 @@ import * as ConvertLength from "./modules/length-func.js";
 document.querySelector("#Length").addEventListener("click", openLengthConverter);
 function openLengthConverter() {
     title.innerText = "Length Converter";
-    actionSection.className = "action-section length"
+    actionSection.className = "action-section converter"
     actionSection.innerHTML = `
-    <div class="first-section">
-            <select id="first-unit">
+            <div class="first-section first-section-len">
+            <select class="first-unit first-unit-len">
                 <option value="Nanometers">Nanometers</option>
                 <option value="Micrometers">Micrometers</option>
                 <option value="Milimeters">Milimeters</option>
@@ -19,11 +19,11 @@ function openLengthConverter() {
                 <option value="Yards">Yards</option>
                 <option value="Miles">Miles</option>
             </select>
-            <input type="number" class="first-input" placeholder="enter value">
-           </div>
+            <input type="number" class="first-input first-input-len" placeholder="enter value">
+        </div>
 
-           <div class="second-section">
-            <select id="second-unit">
+        <div class="second-section second-section-len">
+            <select class="second-unit second-unit-len">
                 <option value="Nanometers">Nanometers</option>
                 <option value="Micrometers">Micrometers</option>
                 <option value="Milimeters">Milimeters</option>
@@ -35,18 +35,18 @@ function openLengthConverter() {
                 <option value="Yards">Yards</option>
                 <option value="Miles">Miles</option>
             </select>
-            <input type="number" class="second-input" placeholder="enter value">
-           </div>
+            <input type="number" class="second-input second-input-len" placeholder="enter value">
+        </div>
     ` ;
     runLength();
 }
 
 function runLength() {
 
-    const firstUnit = document.querySelector("#first-unit");
-    const secondUnit = document.querySelector("#second-unit");
-    const firstInput = document.querySelector(".first-input");
-    const secondInput = document.querySelector(".second-input");
+    const firstUnit = document.querySelector(".first-unit-len");
+    const secondUnit = document.querySelector(".second-unit-len");
+    const firstInput = document.querySelector(".first-input-len");
+    const secondInput = document.querySelector(".second-input-len");
     const nanometers = "Nanometers", micrometers = "Micrometers", milimeters = "Milimeters",
         centimeters = "Centimeters", meters = "Meters", kilometers = "Kilometers",
         inches = "Inches", feet = "Feet", yards = "Yards", miles = "Miles";
@@ -726,7 +726,7 @@ function runLength() {
         }
     }
 
-    firstUnit.addEventListener("change" , enterValue2);
-    secondUnit.addEventListener("change" , enterValue1);
+    firstUnit.addEventListener("change", enterValue2);
+    secondUnit.addEventListener("change", enterValue1);
 
 }
