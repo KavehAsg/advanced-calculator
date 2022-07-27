@@ -36,7 +36,6 @@ function creatHistory(phrase) {
 function deleteHistoryBox(btn) {
     const parent = btn.target.parentElement.parentElement.parentElement;
     parent.remove();
-    console.log(parent);
 }
 
 
