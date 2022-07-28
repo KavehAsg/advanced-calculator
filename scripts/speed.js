@@ -171,6 +171,6 @@ function runSpeed() {
         } 
     }
 
-    firstUnit.addEventListener("change", enterValueSpd2);
+    firstUnit.addEventListener("change", enterValueSpd1);
     secondUnit.addEventListener("change", enterValueSpd1);
 }

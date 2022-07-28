@@ -726,7 +726,7 @@ function runLength() {
         }
     }
 
-    firstUnit.addEventListener("change", enterValueLen2);
+    firstUnit.addEventListener("change", enterValueLen1);
     secondUnit.addEventListener("change", enterValueLen1);
 
 }

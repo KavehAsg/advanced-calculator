@@ -309,6 +309,6 @@ function runMass() {
     }
     
 
-    firstUnit.addEventListener("change", enterValueMass2);
+    firstUnit.addEventListener("change", enterValueMass1);
     secondUnit.addEventListener("change", enterValueMass1);
 }
