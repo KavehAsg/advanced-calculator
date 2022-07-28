@@ -10,7 +10,7 @@ function openLengthConverter() {
             <select class="first-unit first-unit-len">
                 <option value="Nanometers" selected>Nanometers</option>
                 <option value="Micrometers">Micrometers</option>
-                <option value="Milimeters">Milimeters</option>
+                <option value="Millimeters">Millimeters</option>
                 <option value="Centimeters">Centimeters</option>
                 <option value="Meters">Meters</option>
                 <option value="Kilometers">Kilometers</option>
@@ -26,7 +26,7 @@ function openLengthConverter() {
             <select class="second-unit second-unit-len">
                 <option value="Nanometers">Nanometers</option>
                 <option value="Micrometers" selected>Micrometers</option>
-                <option value="Milimeters">Milimeters</option>
+                <option value="Millimeters">Millimeters</option>
                 <option value="Centimeters">Centimeters</option>
                 <option value="Meters">Meters</option>
                 <option value="Kilometers">Kilometers</option>
@@ -47,7 +47,7 @@ function runLength() {
     const secondUnit = document.querySelector(".second-unit-len");
     const firstInput = document.querySelector(".first-input-len");
     const secondInput = document.querySelector(".second-input-len");
-    const nanometers = "Nanometers", micrometers = "Micrometers", milimeters = "Milimeters",
+    const nanometers = "Nanometers", micrometers = "Micrometers", milimeters = "Millimeters",
         centimeters = "Centimeters", meters = "Meters", kilometers = "Kilometers",
         inches = "Inches", feet = "Feet", yards = "Yards", miles = "Miles";
 
