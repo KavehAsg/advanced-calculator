@@ -8,7 +8,7 @@ function openLengthConverter() {
     actionSection.innerHTML = `
             <div class="first-section first-section-len">
             <select class="first-unit first-unit-len">
-                <option value="Nanometers">Nanometers</option>
+                <option value="Nanometers" selected>Nanometers</option>
                 <option value="Micrometers">Micrometers</option>
                 <option value="Milimeters">Milimeters</option>
                 <option value="Centimeters">Centimeters</option>
@@ -25,7 +25,7 @@ function openLengthConverter() {
         <div class="second-section second-section-len">
             <select class="second-unit second-unit-len">
                 <option value="Nanometers">Nanometers</option>
-                <option value="Micrometers">Micrometers</option>
+                <option value="Micrometers" selected>Micrometers</option>
                 <option value="Milimeters">Milimeters</option>
                 <option value="Centimeters">Centimeters</option>
                 <option value="Meters">Meters</option>
@@ -52,8 +52,8 @@ function runLength() {
         inches = "Inches", feet = "Feet", yards = "Yards", miles = "Miles";
 
 
-    firstInput.addEventListener("keyup", enterValue1);
-    function enterValue1() {
+    firstInput.addEventListener("keyup", enterValueLen1);
+    function enterValueLen1() {
         const input = firstInput.value;
         if (input === "") secondInput.value = "";
         else if (firstUnit.value === nanometers) {
@@ -389,8 +389,8 @@ function runLength() {
         }
     }
 
-    secondInput.addEventListener("keyup", enterValue2);
-    function enterValue2() {
+    secondInput.addEventListener("keyup", enterValueLen2);
+    function enterValueLen2() {
         const input = secondInput.value;
         if (input === "") firstInput.value = "";
         else if (secondUnit.value === nanometers) {
@@ -726,7 +726,7 @@ function runLength() {
         }
     }
 
-    firstUnit.addEventListener("change", enterValue2);
-    secondUnit.addEventListener("change", enterValue1);
+    firstUnit.addEventListener("change", enterValueLen2);
+    secondUnit.addEventListener("change", enterValueLen1);
 
 }
