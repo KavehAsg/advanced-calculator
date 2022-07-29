@@ -27,6 +27,7 @@ function openTempConverter() {
     runTemp();
 }
 
+runTemp();
 
 function runTemp() {
     const firstUnit = document.querySelector(".first-unit-temp");
@@ -49,6 +50,7 @@ function runTemp() {
                     secondInput.value = ConvertTemp.celToFar(input);
                     break;
                 case kelvin:
+                    console.log(typeof input);
                     secondInput.value = ConvertTemp.celToKel(input);
                     break;
             }

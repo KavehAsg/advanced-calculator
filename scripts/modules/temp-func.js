@@ -2,10 +2,10 @@
 export {celToFar , celToKel};
 
 function celToFar(data) {
-    return ((data * 9.5) +32) ;
+    return ((data * 1.8) +32) ;
 }
 function celToKel(data) {
-    return (data + 273.15) ;
+    return 273.15 + Number(data) ;
 }
 //------------------------------------------------------//
 
