@@ -14,10 +14,10 @@ function celToKel(data) {
 export {farToCel , farToKel};
 
 function farToCel(data) {
-    return ((data - 32) * 5.9) ;
+    return ((data - 32) * (5/9)) ;
 }
 function farToKel(data) {
-    return ((data - 32) * 5.9 + 273.15) ;
+    return ((data - 32) * (5/9) + 273.15) ;
 }
 //------------------------------------------------------//
 
@@ -29,6 +29,6 @@ function kelToCel(data) {
     return data - 273.15 ;
 }
 function kelToFar(data) {
-    return ((data - 273.15) * 9.5 + 32) ;
+    return ((data - 273.15) * 1.8 + 32) ;
 }
 //------------------------------------------------------//
