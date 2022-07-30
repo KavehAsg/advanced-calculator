@@ -1,25 +1,27 @@
 .converter{
+    width: 100%;
+    height: calc(100vh - 60px);
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
-    align-items: center;
 }
 
 .first-section , .second-section{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 70px;
 }
 
 .first-unit , .second-unit{
-    width: 200px;
+    width: 210px;
     border: solid 0.5px var(--secondry-color);
     background-color: var(--theme-color);
     color: var(--secondry-color);
     border-radius: 5px;
     padding: 10px 5px;
     position: relative;
-    top: -70px;
     outline: none;
 }
 
@@ -42,4 +44,39 @@
 
 :is(.first-input , .second-input)::placeholder{
     font-size: 1rem;
+}
+
+@media (min-width:769px) and (max-width:1024px){
+    .first-input , .second-input{
+        width: 300px;
+    }
+}
+
+@media (min-width:560px) and (max-width:768px){
+    .first-input , .second-input{
+        width: 200px;
+    }
+    .first-unit , .second-unit{
+        width: 150px;
+    }
+}
+
+@media (min-width:280px) and (max-width:559px){
+    .converter{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .first-section , .second-section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .first-input , .second-input{
+        width: 230px;
+    }
+    .first-unit , .second-unit{
+        width: 200px;
+        top: 0;
+    }
 }

@@ -1,0 +1,226 @@
+
+.scf-calc {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: calc(100vh - 60px);
+    overflow: auto;
+    padding: 0 24px;
+    gap: 20px;
+}
+
+main::-webkit-scrollbar {
+    display: none;
+}
+
+.input-scf {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    height: 100%;
+    user-select: none;
+    z-index: 1;
+}
+
+.section1,
+.section2 {
+    display: grid;
+    grid-template-rows: repeat(5, 70px);
+    grid-template-columns: repeat(4, 70px);
+    gap: 2px;
+}
+
+#ANS {
+    grid-column: 2 / 4;
+}
+
+#rad,
+#deg {
+    display: none;
+}
+
+.rad-select,
+.deg-select {
+    color: var(--secondry-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#rad:checked+.rad-select {
+    color: var(--primary-color);
+    background-color: var(--back-color);
+}
+
+#deg:checked+.deg-select {
+    background-color: var(--back-color);
+    color: var(--primary-color);
+}
+
+.key-scf,
+.action-btn {
+    color: var(--secondry-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+:is(.key-scf, .action-btn):hover {
+    background-color: var(--back-color);
+}
+
+.operator {
+    color: var(--primary-color);
+    font-weight: 800;
+}
+
+.symbol {
+    font-size: 0.8rem;
+    position: relative;
+    left: 1px;
+    bottom: 5px;
+}
+
+.display-scf {
+    color: var(--secondry-color);
+    background-color: var(--theme-color);
+    width: 70%;
+    min-height: 70px;
+    font-size: 3rem;
+    word-wrap: break-word;
+    border-radius: 20px;
+    overflow: auto;
+    z-index: 2;
+    position: sticky;
+    top: 0;
+    padding: 12px ;
+}
+
+.display-scf.error {
+    animation: error 0.3s 1 ease-in-out;
+}
+
+@media (min-width:1025px) and (max-width:1200px) {
+
+    .section1,
+    .section2 {
+        grid-template-rows: repeat(5, 60px);
+        grid-template-columns: repeat(4, 60px);
+    }
+
+    .key-scf,
+    .action-btn,
+    .rad-select,
+    .deg-select {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width:769px) and (max-width:1024px) {
+
+    .section1,
+    .section2 {
+        grid-template-rows: repeat(5, 70px);
+        grid-template-columns: repeat(4, 70px);
+    }
+
+    .key-scf,
+    .action-btn,
+    .rad-select,
+    .deg-select {
+        font-size: 1.3rem;
+    }
+
+    .display-scf {
+        width: 100%;
+        min-height: 70px;
+    }
+    .scf-calc {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        gap: 70px;
+    }
+}
+
+@media (min-width:530px) and (max-width:768px) {
+
+    .section1,
+    .section2 {
+        grid-template-rows: repeat(5, 60px);
+        grid-template-columns: repeat(4, 60px);
+    }
+
+    .key-scf,
+    .action-btn,
+    .rad-select,
+    .deg-select {
+        font-size: 1.3rem;
+    }
+
+    .display-scf {
+        min-width: 90%;
+        min-height: 70px;
+        margin-top: 15px;
+        font-size: 2rem;
+    }
+
+    .scf-calc {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        gap: 40px;
+    }
+}
+
+@media (min-width:280px) and (max-width:530px) {
+
+    .section1,
+    .section2 {
+        grid-template-rows: repeat(5, 60px);
+        grid-template-columns: repeat(4, 60px);
+        gap: 3px;
+    }
+
+    .key-scf,
+    .action-btn,
+    .rad-select,
+    .deg-select {
+        font-size: 1.6rem;
+    }
+
+    .input-scf {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .display-scf {
+        height: 90px;
+        width: 80%;
+        font-size: 1.7rem;
+        margin-top: 10px;
+        word-wrap: unset;
+        overflow: scroll;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        padding-left: 8px;
+        white-space: nowrap;
+    } 
+    .scf-calc {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 25px;
+        gap: 40px;
+    }
+
+}

@@ -6,9 +6,9 @@
             const historyBox = document.createElement("div");
             historyBox.classList.add("history-box");
             historyBox.innerHTML = `
-            <p>${item}</p>
+            <p class="history-phrase">${item}</p>
             <div class="history-boxbtn">
-                <div class="delete"><i class="fa-regular fa-trash-can"></i></div>
+                <i class="fa-regular fa-trash-can delete"></i>
             </div>
             `;
             document.querySelector(".history").appendChild(historyBox);

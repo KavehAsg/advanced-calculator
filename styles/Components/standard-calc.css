@@ -1,105 +1,127 @@
 /* keys and display */
 
+* {
+    transition: all 0.3s ease-in-out;
+}
 
 .std {
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    gap: 60px;
+    height: calc(100vh - 60px);
+    overflow: auto;
 }
 
-.display {
+.display-std {
     outline: none;
-    border: none;
-    width: 400px;
-    height: 130px;
-    font-size: 3rem;
+    height: 100px;
+    width: 60%;
+    font-size: 3em;
     padding: 20px;
     letter-spacing: 1px;
-    display: flex;
-    justify-content: end;
-    align-items: flex-end;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--theme-color);
     color: var(--secondry-color);
-    background: var(--theme-color);
-    border-radius: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 
-.display.error {
+.display-std.error {
     animation: error 0.3s 1 ease-in-out;
 }
 
-.key {
+.key-std {
     border-radius: 50%;
     display: flex;
     font-weight: bold;
     justify-content: center;
     align-items: center;
-    transition: all 0.3s;
-    transition: all 0.3s linear;
     cursor: pointer;
 }
 
-.key:hover {
-    -webkit-box-shadow: 0px 0px 3px 0px var(--secondry-color);
-    box-shadow: 0px 0px 3px 0px var(--secondry-color);
+.key-std:hover {
+    background-color: var(--back-color);
 }
 
-.keys {
-    font-size: 1.5rem;
+.keys-std {
+    font-size: 1.7rem;
     display: grid;
     grid-gap: 5px;
     grid-template-columns: repeat(4, 80px);
     grid-template-rows: repeat(5, 80px);
+    user-select: none;
 }
 
-.numbers {
+.numbers-std {
     color: var(--secondry-color);
 }
 
-.operator,
-.equal {
+.operator-std,
+.equal-std {
     color: var(--primary-color);
 }
 
-.clear-all,
-.clear-last {
+.clear-all-std,
+.clear-last-std {
     color: var(--action-color);
 }
 
-
-
-
-
-@media (min-width:1025px) and (max-width:1200px) {
+@media (min-width:769px) and (max-width:1100px) {
     /*laptop size*/
 
-    .keys {
-        font-size: 1.5rem;
-        display: grid;
-        grid-gap: 5px;
+    .keys-std {
         grid-template-columns: repeat(4, 70px);
         grid-template-rows: repeat(5, 70px);
     }
 
-    .action-section {
-        display: flex;
-        flex-direction: row;
-        gap: 35px;
-    }
-
-    .display {  
-        margin-left: -45px;
+    .display-std{
+        height: 60px;
+        font-size: 2.5rem;
+        width: 50%;
     }
 }
 
-@keyframes error {
-    50% {
-        -webkit-box-shadow: 0px 0px 6px 1px rgba(255, 0, 0, 0.94);
-        box-shadow: 0px 0px 6px 1px rgba(255, 0, 0, 0.94);
+
+@media (min-width:481px) and (max-width:768px) {
+    .keys-std {
+        grid-template-columns: repeat(4, 70px);
+        grid-template-rows: repeat(5, 70px);
     }
 
-    100% {
-        -webkit-box-shadow: 0px 0px 0px 0px rgba(255, 0, 0, 0.94);
-        box-shadow: 0px 0px 0px 0px rgba(255, 0, 0, 0.94);
+    .std {
+        flex-direction: column;
+        gap: 15px;
     }
+    .display-std{
+        width: 70%;
+        height: 60px;
+        font-size: 2rem;
+    }
+   
+}
+
+@media (min-width:280px) and (max-width:480px) {
+
+    .keys-std {
+        grid-template-columns: repeat(4, 65px);
+        grid-template-rows: repeat(5, 65px);
+    }
+
+    .std {
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 10% 0;
+    }
+    .display-std{
+        width: 80%;
+        height: 50px;
+        font-size: 2rem;
+    }
+
 }
