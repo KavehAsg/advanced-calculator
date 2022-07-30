@@ -27,8 +27,6 @@ function openTempConverter() {
     runTemp();
 }
 
-runTemp();
-
 function runTemp() {
     const firstUnit = document.querySelector(".first-unit-temp");
     const secondUnit = document.querySelector(".second-unit-temp");
