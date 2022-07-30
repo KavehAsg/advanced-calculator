@@ -1,4 +1,4 @@
-import { creatHistory, setLocalStorage, title, actionSection , closeHamMenu } from "./main.js";
+import { creatHistory, setLocalStorage, title, actionSection, closeHamMenu } from "./main.js";
 
 document.querySelector("#Standard").addEventListener("click", openStdCalc); // open Standard calculator from menu
 function openStdCalc() {
@@ -6,46 +6,46 @@ function openStdCalc() {
     title.innerText = "Standard Calculator";
     actionSection.className = "action-section std"
     actionSection.innerHTML = `
-    <input class="display" type="text" placeholder="0">
-                <div class="keys">
-    
-                    <div class="key clear-all">AC</div>
-                    <div class="key clear-last">C</div>
-                    <div class="key operator" id="rem">%</div>
-                    <div class="key operator" id="division">/</div>
-    
-                    <div class="key numbers">7</div>
-                    <div class="key numbers">8</div>
-                    <div class="key numbers">9</div>
-                    <div class="key operator" id="multi">*</div>
-    
-                    <div class="key numbers">4</div>
-                    <div class="key numbers">5</div>
-                    <div class="key numbers">6</div>
-                    <div class="key operator" id="minous">-</div>
-    
-                    <div class="key numbers">1</div>
-                    <div class="key numbers">2</div>
-                    <div class="key numbers">3</div>
-                    <div class="key operator" id="plus">+</div>
-    
-                    <div class="key numbers" style="grid-column: 1 / 3 ; border-radius: 40px;">0</div>
-                    <div class="key numbers">.</div>
-                    <div class="key equal" id="equal">=</div>
-    
-                </div>
+    <input class="display-std" type="text" placeholder="0">
+            <div class="keys-std">
+
+                <div class="key-std clear-all-std">AC</div>
+                <div class="key-std clear-last-std">C</div>
+                <div class="key-std operator-std" id="rem">%</div>
+                <div class="key-std operator-std" id="division">/</div>
+
+                <div class="key-std numbers-std">7</div>
+                <div class="key-std numbers-std">8</div>
+                <div class="key-std numbers-std">9</div>
+                <div class="key-std operator-std" id="multi">*</div>
+
+                <div class="key-std numbers-std">4</div>
+                <div class="key-std numbers-std">5</div>
+                <div class="key-std numbers-std">6</div>
+                <div class="key-std operator-std" id="minous">-</div>
+
+                <div class="key-std numbers-std">1</div>
+                <div class="key-std numbers-std">2</div>
+                <div class="key-std numbers-std">3</div>
+                <div class="key-std operator-std" id="plus">+</div>
+
+                <div class="key-std numbers-std" style="grid-column: 1 / 3 ; border-radius: 40px;">0</div>
+                <div class="key-std numbers-std">.</div>
+                <div class="key-std equal-std" id="equal-std">=</div>
+
+            </div>
     `;
     runStdCalc();
 }
 
 function runStdCalc() {
 
-    const display = document.querySelector(".display");
-    const numbers = document.querySelectorAll(".numbers");
-    const clearAll = document.querySelector(".clear-all");
-    const clearLast = document.querySelector(".clear-last");
-    const equal = document.querySelector("#equal");
-    const operator = document.querySelectorAll(".operator");
+    const display = document.querySelector(".display-std");
+    const numbers = document.querySelectorAll(".numbers-std");
+    const clearAll = document.querySelector(".clear-all-std");
+    const clearLast = document.querySelector(".clear-last-std");
+    const equal = document.querySelector("#equal-std");
+    const operator = document.querySelectorAll(".operator-std");
 
 
     const calcPattern = /^[-+]?[0-9]+([-+*/%.]+[-+]?[0-9]+)*$/;

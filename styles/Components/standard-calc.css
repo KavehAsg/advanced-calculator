@@ -8,7 +8,7 @@
     justify-content: center;
 }
 
-.display {
+.display-std {
     outline: none;
     border: none;
     width: 400px;
@@ -24,11 +24,11 @@
     border-radius: 10px;
 }
 
-.display.error {
+.display-std.error {
     animation: error 0.3s 1 ease-in-out;
 }
 
-.key {
+.key-std {
     border-radius: 50%;
     display: flex;
     font-weight: bold;
@@ -39,12 +39,12 @@
     cursor: pointer;
 }
 
-.key:hover {
+.key-std:hover {
     -webkit-box-shadow: 0px 0px 3px 0px var(--secondry-color);
     box-shadow: 0px 0px 3px 0px var(--secondry-color);
 }
 
-.keys {
+.keys-std {
     font-size: 1.5rem;
     display: grid;
     grid-gap: 5px;
@@ -52,17 +52,17 @@
     grid-template-rows: repeat(5, 80px);
 }
 
-.numbers {
+.numbers-std {
     color: var(--secondry-color);
 }
 
-.operator,
-.equal {
+.operator-std,
+.equal-std {
     color: var(--primary-color);
 }
 
-.clear-all,
-.clear-last {
+.clear-all-std,
+.clear-last-std {
     color: var(--action-color);
 }
 
@@ -73,7 +73,7 @@
 @media (min-width:1025px) and (max-width:1200px) {
     /*laptop size*/
 
-    .keys {
+    .keys-std {
         font-size: 1.5rem;
         display: grid;
         grid-gap: 5px;
@@ -87,7 +87,7 @@
         gap: 35px;
     }
 
-    .display {  
+    .display-std {  
         margin-left: -45px;
     }
 }
