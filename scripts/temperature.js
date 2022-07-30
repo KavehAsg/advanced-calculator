@@ -1,8 +1,9 @@
-import { title, actionSection } from "./main.js";
+import { title, actionSection , closeHamMenu } from "./main.js";
 import * as ConvertTemp from "./modules/temp-func.js";
 
 document.querySelector("#Temperature").addEventListener("click", openTempConverter);
 function openTempConverter() {
+    closeHamMenu();
     title.innerText = "Temperature Converter";
     actionSection.className = "action-section converter"
     actionSection.innerHTML = `

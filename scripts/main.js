@@ -7,7 +7,12 @@ const title = document.querySelector("h1");
 const actionSection = document.querySelector(".action-section");
 let deleteHistoryBtn = document.querySelectorAll(".delete");
 
-export { creatHistory, setLocalStorage , title , actionSection };
+export { creatHistory, setLocalStorage, title, actionSection, closeHamMenu };
+
+actionSection.addEventListener("click", () => {
+    closeHamMenu();
+    closeHistory();    
+});
 
 function selectNewBtns() {
     deleteHistoryBtn = document.querySelectorAll(".delete");
@@ -60,13 +65,20 @@ function removeLocalStorage(btn) {
 }
 
 
-function hamAction() { // perform action to hamburger menu
+function closeHamMenu() {
+    hamList.classList.remove("active");
+    hamMenu.classList.remove("active");
+}
+hamMenu.addEventListener("click", () => { // Hamburger menu action
     hamMenu.classList.toggle("active");
     hamList.classList.toggle("active");
+});
+
+
+function closeHistory() {
+    historyContainer.classList.remove("active");
+    historyBtn.classList.remove("active");
 }
-hamMenu.addEventListener("click", hamAction);
-
-
 historyBtn.addEventListener("click", () => { //action for history menu 
     historyContainer.classList.toggle("active");
     historyBtn.classList.toggle("active");
@@ -91,5 +103,7 @@ function setTheme() { // switch for dark mode
     }
 }
 themeBtn.addEventListener("click", setTheme);
+
+// document.body.addEventListener("click" , closeHamMenu);
 
 // end of menues and navbar actions

@@ -1,8 +1,9 @@
-import { title, actionSection } from "./main.js";
+import { title, actionSection , closeHamMenu } from "./main.js";
 import * as ConvertLength from "./modules/length-func.js";
 
 document.querySelector("#Length").addEventListener("click", openLengthConverter);
 function openLengthConverter() {
+    closeHamMenu();
     title.innerText = "Length Converter";
     actionSection.className = "action-section converter"
     actionSection.innerHTML = `

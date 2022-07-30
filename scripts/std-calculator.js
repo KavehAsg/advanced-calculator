@@ -1,7 +1,8 @@
-import { creatHistory, setLocalStorage, title, actionSection } from "./main.js";
+import { creatHistory, setLocalStorage, title, actionSection , closeHamMenu } from "./main.js";
 
 document.querySelector("#Standard").addEventListener("click", openStdCalc); // open Standard calculator from menu
 function openStdCalc() {
+    closeHamMenu();
     title.innerText = "Standard Calculator";
     actionSection.className = "action-section std"
     actionSection.innerHTML = `
