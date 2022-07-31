@@ -114,4 +114,5 @@ function runStdCalc() {
 
 }
 
-runStdCalc();
+// runStdCalc();
+

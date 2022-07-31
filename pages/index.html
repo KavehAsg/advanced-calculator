@@ -45,35 +45,60 @@
             <span class="linked-list" id="Angle">Angle</span>
         </aside>
 
-        <article class="action-section std">
-            <input class="display-std" type="text" placeholder="0">
-            <div class="keys-std">
+        <article class="action-section scf-calc">
+            <div class="output-scf">
+                <div class="display-scf">0</div>
+            </div>
 
-                <div class="key-std clear-all-std">AC</div>
-                <div class="key-std clear-last-std">C</div>
-                <div class="key-std operator-std" id="rem">%</div>
-                <div class="key-std operator-std" id="division">/</div>
-
-                <div class="key-std numbers-std">7</div>
-                <div class="key-std numbers-std">8</div>
-                <div class="key-std numbers-std">9</div>
-                <div class="key-std operator-std" id="multi">*</div>
-
-                <div class="key-std numbers-std">4</div>
-                <div class="key-std numbers-std">5</div>
-                <div class="key-std numbers-std">6</div>
-                <div class="key-std operator-std" id="minous">-</div>
-
-                <div class="key-std numbers-std">1</div>
-                <div class="key-std numbers-std">2</div>
-                <div class="key-std numbers-std">3</div>
-                <div class="key-std operator-std" id="plus">+</div>
-
-                <div class="key-std numbers-std" style="grid-column: 1 / 3 ; border-radius: 40px;">0</div>
-                <div class="key-std numbers-std">.</div>
-                <div class="key-std equal-std" id="equal-std">=</div>
+            <div class="input-scf">
+                <input type="radio" id="rad" name="angle">
+                <label for="rad" class="rad-select">Rad</label>
+                <input type="radio" id="deg" name="angle" checked>
+                <label for="deg" class="deg-select">Deg</label>
+                <div class="key-scf" id="radical">√</div>
+                <div class="key-scf" id="pow2">X<span class="symbol">2</span></div>
+                <div class="key-scf" id="pr(">(</div>
+                <div class="key-scf" id="pr)">)</div>
+                <div class="action-btn operator" id="clear-all">AC</div>
+                <div class="action-btn" id="clear-last">C</div>
+ 
+                <div class="key-scf" id="pi">ℼ</div>
+                <div class="key-scf" id="cos">cos</div>
+                <div class="key-scf" id="sin">sin</div>
+                <div class="key-scf" id="tan">tan</div>
+                <div class="key-scf" id="num7">7</div>
+                <div class="key-scf" id="num8">8</div>
+                <div class="key-scf" id="num9">9</div>
+                <div class="key-scf operator" id="divide">÷</div>
+ 
+                <div class="key-scf" id="e">e</div>
+                <div class="key-scf" id="acos">acos</div>
+                <div class="key-scf" id="asin">asin</div>
+                <div class="key-scf" id="atan">atan</div>
+                <div class="key-scf" id="num4">4</div>
+                <div class="key-scf" id="num5">5</div>
+                <div class="key-scf" id="num6">6</div>
+                <div class="key-scf operator" id="multiply">×</div>
+ 
+                <div class="key-scf" id="factorial">x!</div>
+                <div class="key-scf" id="exp">exp</div>
+                <div class="key-scf" id="ln">ln</div>
+                <div class="key-scf" id="log">log</div>
+                <div class="key-scf" id="num1">1</div>
+                <div class="key-scf" id="num2">2</div>
+                <div class="key-scf" id="num3">3</div>
+                <div class="key-scf operator" id="minus">-</div>
+ 
+                <div class="key-scf" id="pow">x<span class="symbol">y</span></div>
+                <div class="action-btn" id="ANS">ANS</div>
+                <div class="key-scf operator" id="remainder">%</div>
+                <div class="key-scf" id="dot">.</div>
+                <div class="key-scf" id="num0">0</div>
+                <div class="action-btn operator" id="result">=</div>
+                <div class="key-scf operator" id="plus">+</div>
 
             </div>
+
         </article>
 
         <aside class="history-container">
@@ -99,6 +124,7 @@
     <script src="../scripts/modules/time-func.js" type="module"></script>
     <script src="../scripts/angle.js" type="module"></script>
     <script src="../scripts/modules/angle-func.js" type="module"></script>
+    <script src="../scripts/scientific-calc.js" type="module"></script>
 </body>
 
 </html>

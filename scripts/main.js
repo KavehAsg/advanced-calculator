@@ -86,19 +86,19 @@ historyBtn.addEventListener("click", () => { //action for history menu
 
 
 function setTheme() { // switch for dark mode
-    if (themeBtn.checked) {
+    if (themeBtn.checked) { // dark mode
         document.documentElement.style.setProperty('--theme-color', '#000');
         document.documentElement.style.setProperty('--primary-color', '#f4511e');
         document.documentElement.style.setProperty('--secondry-color', '#fff');
         document.documentElement.style.setProperty('--action-color', '#9e9e9e');
-        document.documentElement.style.setProperty('--back-color', '#9e9e9e');
+        document.documentElement.style.setProperty('--back-color', '#eeeeee42');
         document.querySelector(".theme-btn").innerHTML = `<i class="fa-regular fa-sun"></i>`
-    } else {
+    } else { // light mode
         document.documentElement.style.setProperty('--theme-color', '#fff');
         document.documentElement.style.setProperty('--primary-color', '#1565c0');
         document.documentElement.style.setProperty('--secondry-color', '#000');
         document.documentElement.style.setProperty('--action-color', '#bdbdbd');
-        document.documentElement.style.setProperty('--back-color', '#eeeeee');
+        document.documentElement.style.setProperty('--back-color', '#eeeeeed3');
         document.querySelector(".theme-btn").innerHTML = `<i class="fa-regular fa-moon"></i>`
     }
 }
