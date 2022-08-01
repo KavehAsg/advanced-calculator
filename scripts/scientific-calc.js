@@ -181,6 +181,7 @@ const answer = document.querySelector("#ANS");
 let displayArray = [], fermula = [];
 let resultFlag = false;
 let ans = 0;
+const pattern = /([\.]\d?)+[0]{5}/;
 
 input.forEach(btn => btn.addEventListener("click", btnAction));
 function btnAction(event) {
@@ -200,6 +201,9 @@ function btnAction(event) {
             }
         }
         display.innerText = displayArray.join('');
+        if (fermula.includes("!")) {
+            fermula = getFactorialNum(fermula);
+        }
     })
 }
 
@@ -207,10 +211,12 @@ result.addEventListener("click", showResult);
 function showResult() {
     try {
         const finalFermula = fermula.join("");
-        const result = eval(finalFermula);
+        let result = eval(finalFermula);
         if (Number.isNaN(result)) {
             display.innerText = "Invalid input";
         } else {
+            let stringedResult = String(result);
+            stringedResult.match(pattern) !== null ? result = parseFloat(result.toFixed(2)) : null;
             display.innerText = result;
             displayArray = [result];
             fermula = [result];
@@ -255,32 +261,56 @@ function putLastAnswer() {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function getFactorialNum(phrase) {
+    const operator = ["-", "+", "*", "/", "%"];
+    let factorialIndex = phrase.indexOf("!");
+    let factorialNumber = [];
+    let parenthesesCounter = 0;
+    factorialIndex--;
+    for (factorialIndex; factorialIndex >= 0; factorialIndex--) {
+        if (phrase[factorialIndex].includes(")")) {
+            parenthesesCounter += 1;
+            factorialNumber.unshift(phrase[factorialIndex]);
+        }
+        else if (phrase[factorialIndex].includes("(")) {
+            parenthesesCounter -= 1;
+            factorialNumber.unshift(phrase[factorialIndex]);
+        }
+        else if (operator.includes(phrase[factorialIndex]) && parenthesesCounter == 0) break;
+        else factorialNumber.unshift(phrase[factorialIndex]);
+    }
+    factorialNumber = factorialNumber.join("");
+    phrase.splice(factorialIndex + 1, phrase.indexOf("!") + 1, `factorial(${factorialNumber})`);
+    return phrase;
+}
 
 function factorial(n) {
     let answer = 1;
     if (n == 0 || n == 1) {
         return answer;
+    } else if (n % 1 !== 0) {
+        return gamma(n + 1);
     } else {
         for (var i = n; i >= 1; i--) {
             answer = answer * i;
         }
         return answer;
+    }
+}
+
+function gamma(n) {
+    var g = 7, // g represents the precision desired, p is the values of p[i] to plug into Lanczos' formula
+        p = [0.99999999999980993, 676.5203681218851, -1259.1392167224028, 771.32342877765313, -176.61502916214059, 12.507343278686905, -0.13857109526572012, 9.9843695780195716e-6, 1.5056327351493116e-7];
+    if (n < 0.5) {
+        return Math.PI / Math.sin(n * Math.PI) / gamma(1 - n);
+    }
+    else {
+        n--;
+        var x = p[0];
+        for (var i = 1; i < g + 2; i++) {
+            x += p[i] / (n + i);
+        }
+        var t = n + g + 0.5;
+        return Math.sqrt(2 * Math.PI) * Math.pow(t, (n + 0.5)) * Math.exp(-t) * x;
     }
 }
