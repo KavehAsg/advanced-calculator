@@ -49,6 +49,7 @@ function runStdCalc() {
 
 
     const calcPattern = /^[-+]?[0-9]+([-+*/%.]+[-+]?[0-9]+)*$/;
+    const resultPattern = /([\.]\d?)+[0]{5}/;
     let resultFlag = 0;
 
     function inputNum(event) {
@@ -84,12 +85,15 @@ function runStdCalc() {
 
     function result() {
         if (calcPattern.test(display.value)) {
-            const historyPhrase = `${display.value} = ${eval(display.value)}`;
-            if (display.value != eval(display.value)) {
+            let result = eval(display.value);
+            let stringedResult = String(result);
+            stringedResult.match(resultPattern) !== null ? result = parseFloat(result.toFixed(2)) : null;
+            const historyPhrase = `${display.value} = ${result}`;
+            if (display.value != result) {
                 setLocalStorage(historyPhrase);
                 creatHistory(historyPhrase);
             }
-            display.value = eval(display.value);
+            display.value = result;
             resultFlag = 1; // set flag to show = has pressed
         } else {
             display.classList.toggle("error");
@@ -114,5 +118,5 @@ function runStdCalc() {
 
 }
 
-// runStdCalc();
+runStdCalc();
 
