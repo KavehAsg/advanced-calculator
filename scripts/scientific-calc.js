@@ -176,9 +176,11 @@ const display = document.querySelector(".display-scf");
 const result = document.querySelector("#result");
 const clearAll = document.querySelector("#clear-all");
 const clearLast = document.querySelector("#clear-last");
+const answer = document.querySelector("#ANS");
 
 let displayArray = [], fermula = [];
 let resultFlag = false;
+let ans = 0;
 
 input.forEach(btn => btn.addEventListener("click", btnAction));
 function btnAction(event) {
@@ -197,8 +199,7 @@ function btnAction(event) {
                 displayArray.push(target.show);
             }
         }
-        let finalOutput = displayArray.join('');
-        display.innerText = finalOutput;
+        display.innerText = displayArray.join('');
     })
 }
 
@@ -207,10 +208,15 @@ function showResult() {
     try {
         const finalFermula = fermula.join("");
         const result = eval(finalFermula);
-        display.innerText = result;
-        displayArray = [result];
-        fermula = [result];
-        resultFlag = true;
+        if (Number.isNaN(result)) {
+            display.innerText = "Invalid input";
+        } else {
+            display.innerText = result;
+            displayArray = [result];
+            fermula = [result];
+            resultFlag = true;
+            ans = result;
+        }
     } catch {
         display.classList.toggle("error");
         setTimeout(() => {
@@ -224,13 +230,29 @@ function clearAllFunc() {
     display.innerText = "0";
     displayArray = [];
     fermula = [];
+    resultFlag = false;
 }
 
 clearLast.addEventListener("click", clearLastFunc);
 function clearLastFunc() {
     displayArray.pop();
     fermula.pop();
-    display.innerText = displayArray.join('');
+    if (displayArray.length == 0) display.innerText = "0";
+    else display.innerText = displayArray.join('');
+    resultFlag = false;
+}
+
+answer.addEventListener("click", putLastAnswer);
+function putLastAnswer() {
+    if (resultFlag) {
+        displayArray = ["ANS"];
+        fermula = [ans];
+        display.innerText = displayArray.join("");
+    } else {
+        displayArray.push("ANS");
+        fermula.push(ans);
+        display.innerText = displayArray.join("");
+    }
 }
 
 
