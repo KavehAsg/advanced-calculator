@@ -51,6 +51,7 @@ body {
 }
 
 nav {
+    user-select: none;
     width: 100%;
     background-color: inherit;
     display: flex;
@@ -61,6 +62,7 @@ nav {
 }
 
 #theme-toogle {
+    user-select: none;
     display: none;
 }
 
@@ -73,6 +75,7 @@ nav {
     transition: all 0.3s ease-in-out;
     font-size: 1.5rem;
     color: var(--secondry-color);
+    user-select: none;
 }
 
 
