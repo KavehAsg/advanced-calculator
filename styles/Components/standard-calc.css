@@ -123,8 +123,8 @@
 @media (min-width:280px) and (max-width:480px) {
 
     .keys-std {
-        grid-template-columns: repeat(4, 70px);
-        grid-template-rows: repeat(5, 70px);
+        grid-template-columns: repeat(4, 60px);
+        grid-template-rows: repeat(5, 60px);
     }
 
     .action-section {
@@ -136,11 +136,11 @@
         height: 100%;
     }
     .display-std{
-        height: 100%;
+        height: 90%;
         font-size: 2rem;
     }
     .output-std{
-        width: 90%;
+        width: 80%;
     }
 
 }

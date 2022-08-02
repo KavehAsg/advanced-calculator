@@ -191,7 +191,7 @@ main::-webkit-scrollbar {
     .section1,
     .section2 {
         grid-template-rows: repeat(5, 60px);
-        grid-template-columns: repeat(4, 75px);
+        grid-template-columns: repeat(4, 60px);
     }
 
     .key-scf,
