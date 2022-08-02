@@ -14,11 +14,12 @@
     --secondry-color: #000;
     --action-color: #bdbdbd;
     --back-color: #eeeeee;
+    --screen-height: 100%;
 }
 
 body {
     max-width: 100vw;
-    max-height: 100vh;
+    height: var(--screen-height);
     background-color: var(--theme-color);
     padding: 0 32px;
 }
