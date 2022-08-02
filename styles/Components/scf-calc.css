@@ -14,7 +14,7 @@ main::-webkit-scrollbar {
 .input-scf {
     display: flex;
     flex-direction: row-reverse;
-    /* height: 100%; */
+    height: 100%;
 }
 
 .section1,
