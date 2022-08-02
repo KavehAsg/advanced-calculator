@@ -1,27 +1,41 @@
-.scf-calc{
+.scf-calc {
     display: flex;
     gap: 10px;
     align-items: center;
     justify-content: space-between;
     padding: 40px;
 }
-
-.input-scf{
-    display: grid;
-    grid-template-rows: repeat(5 , 60px);
-    grid-template-columns: repeat(8 , 60px);
-    gap: 2px;
-}
-
-#num0{
-    grid-column: 5 / 7 ;
-}
-
-#rad , #deg {
+main::-webkit-scrollbar {
     display: none;
 }
 
-.rad-select , .deg-select{
+
+
+.input-scf {
+    display: flex;
+    flex-direction: row-reverse;
+    /* height: 100%; */
+}
+
+.section1,
+.section2 {
+    display: grid;
+    grid-template-rows: repeat(5, 70px);
+    grid-template-columns: repeat(4, 70px);
+    gap: 2px;
+}
+
+#ANS {
+    grid-column: 2 / 4;
+}
+
+#rad,
+#deg {
+    display: none;
+}
+
+.rad-select,
+.deg-select {
     color: var(--secondry-color);
     display: flex;
     justify-content: center;
@@ -31,54 +45,59 @@
     cursor: pointer;
 }
 
-#rad:checked+.rad-select{
+#rad:checked+.rad-select {
     color: var(--primary-color);
     background-color: var(--back-color);
 }
 
-#deg:checked+.deg-select{
+#deg:checked+.deg-select {
     background-color: var(--back-color);
     color: var(--primary-color);
 }
 
-.key-scf , .action-btn{
+.key-scf,
+.action-btn {
     color: var(--secondry-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     border-radius: 5px;
     cursor: pointer;
 }
 
-:is(.key-scf , .action-btn):hover{
-    color: var();
+:is(.key-scf, .action-btn):hover {
     background-color: var(--back-color);
 }
 
-.operator{
+.operator {
     color: var(--primary-color);
     font-weight: 800;
 }
 
-.symbol{
+.symbol {
     font-size: 0.8rem;
-    position: relative; 
+    position: relative;
     left: 1px;
     bottom: 5px;
 }
 
-.output-scf{
+.output-scf {
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.display-scf{
+.display-scf {
     color: var(--secondry-color);
     padding: 24px;
-    width: 100%;
-    height: 60%;
+    width: 90%;
+    height: 50%;
     font-size: 2rem;
+    word-wrap: break-word;
+    border-radius: 20px;
 }
 
 .display-scf.error {
@@ -95,4 +114,102 @@
         -webkit-box-shadow: 0px 0px 0px 0px rgba(255, 0, 0, 0.94);
         box-shadow: 0px 0px 0px 0px rgba(255, 0, 0, 0.94);
     }
+}
+
+@media (min-width:1025px) and (max-width:1200px) {
+
+    .section1,
+    .section2 {
+        grid-template-rows: repeat(5, 60px);
+        grid-template-columns: repeat(4, 60px);
+    }
+
+    .key-scf,
+    .action-btn,
+    .rad-select,
+    .deg-select {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width:769px) and (max-width:1024px) {
+
+    .section1,
+    .section2 {
+        grid-template-rows: repeat(5, 70px);
+        grid-template-columns: repeat(4, 70px);
+    }
+
+    .key-scf,
+    .action-btn,
+    .rad-select,
+    .deg-select {
+        font-size: 1.3rem;
+    }
+
+    .display-scf {
+        height: 100px;
+    }
+
+    .scf-calc {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+}
+
+@media (min-width:481px) and (max-width:768px) {
+
+    .section1,
+    .section2 {
+        grid-template-rows: repeat(5, 60px);
+        grid-template-columns: repeat(4, 60px);
+    }
+
+    .key-scf,
+    .action-btn,
+    .rad-select,
+    .deg-select {
+        font-size: 1.3rem;
+    }
+
+    .display-scf {
+        height: 100px;
+    }
+
+    .scf-calc {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+}
+
+@media (min-width:280px) and (max-width:480px) {
+
+    .section1,
+    .section2 {
+        grid-template-rows: repeat(5, 50px);
+        grid-template-columns: repeat(4, 60px);
+    }
+
+    .key-scf,
+    .action-btn,
+    .rad-select,
+    .deg-select {
+        font-size: 1.3rem;
+    }
+
+    .input-scf {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .display-scf {
+        padding: 14px;
+        height: 100px;
+        font-size: 1.5rem;
+    }
+
 }

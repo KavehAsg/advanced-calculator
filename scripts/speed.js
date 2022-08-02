@@ -1,8 +1,9 @@
-import { title, actionSection , closeHamMenu } from "./main.js";
+import { title, actionSection , closeHamMenu , hideHistory } from "./main.js";
 import * as ConvertSpeed from "./modules/speed-func.js";
 
 document.querySelector("#Speed").addEventListener("click", openSpeedConverter);
 function openSpeedConverter() {
+    hideHistory();
     closeHamMenu();
     title.innerText = "Speed Converter";
     actionSection.className = "action-section converter"

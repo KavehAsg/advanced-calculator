@@ -1,8 +1,9 @@
-import { title, actionSection , closeHamMenu } from "./main.js";
+import { title, actionSection , closeHamMenu , hideHistory } from "./main.js";
 import * as ConvertTime from "./modules/time-func.js";
 
 document.querySelector("#Time").addEventListener("click", openTimeConverter);
 function openTimeConverter() {
+    hideHistory();
     closeHamMenu();
     title.innerText = "Time Converter";
     actionSection.className = "action-section converter"

@@ -1,4 +1,4 @@
-import { creatHistory, setLocalStorage, title, actionSection, closeHamMenu } from "./main.js";
+import { creatHistory, setLocalStorage, title, actionSection, closeHamMenu, bringHistory } from "./main.js";
 
 document.querySelector("#Scientific").addEventListener("click", openScfCalc); // open Standard calculator from menu
 function openScfCalc() {
@@ -8,55 +8,65 @@ function openScfCalc() {
     actionSection.innerHTML = `
             <div class="output-scf">
             <div class="display-scf">0</div>
-        </div>
+            </div>
 
         <div class="input-scf">
-            <input type="radio" id="rad" name="angle">
-            <label for="rad" class="rad-select">Rad</label>
-            <input type="radio" id="deg" name="angle" checked>
-            <label for="deg" class="deg-select">Deg</label>
-            <div class="key-scf" id="radical">√</div>
-            <div class="key-scf" id="pow2">X<span class="symbol">2</span></div>
-            <div class="key-scf" id="pr(">(</div>
-            <div class="key-scf" id="pr)">)</div>
-            <div class="action-btn" id="clear-last">C</div>
-            <div class="action-btn operator" id="clear-all">AC</div>
+                <div class="section1">
+                <div class="key-scf" id="pr(">(</div>
+                <div class="key-scf" id="pr)">)</div>
+                <div class="action-btn" id="clear-last">C</div>
+                <div class="action-btn operator" id="clear-all">AC</div>
 
-            <div class="key-scf" id="pi">ℼ</div>
-            <div class="key-scf" id="cos">cos</div>
-            <div class="key-scf" id="sin">sin</div>
-            <div class="key-scf" id="tan">tan</div>
-            <div class="key-scf" id="num7">7</div>
-            <div class="key-scf" id="num8">8</div>
-            <div class="key-scf" id="num9">9</div>
-            <div class="key-scf operator" id="divide">÷</div>
+                <div class="key-scf" id="num7">7</div>
+                <div class="key-scf" id="num8">8</div>
+                <div class="key-scf" id="num9">9</div>
+                <div class="key-scf operator" id="divide">÷</div>
 
-            <div class="key-scf" id="e">e</div>
-            <div class="key-scf" id="acos">acos</div>
-            <div class="key-scf" id="asin">asin</div>
-            <div class="key-scf" id="atan">atan</div>
-            <div class="key-scf" id="num4">4</div>
-            <div class="key-scf" id="num5">5</div>
-            <div class="key-scf" id="num6">6</div>
-            <div class="key-scf operator" id="multiply">×</div>
+                <div class="key-scf" id="num4">4</div>
+                <div class="key-scf" id="num5">5</div>
+                <div class="key-scf" id="num6">6</div>
+                <div class="key-scf operator" id="multiply">×</div>
 
-            <div class="key-scf" id="factorial">x!</div>
-            <div class="key-scf" id="exp">exp</div>
-            <div class="key-scf" id="ln">ln</div>
-            <div class="key-scf" id="log">log</div>
-            <div class="key-scf" id="num1">1</div>
-            <div class="key-scf" id="num2">2</div>
-            <div class="key-scf" id="num3">3</div>
-            <div class="key-scf operator" id="minus">-</div>
+                <div class="key-scf" id="num1">1</div>
+                <div class="key-scf" id="num2">2</div>
+                <div class="key-scf" id="num3">3</div>
+                <div class="key-scf operator" id="minus">-</div>
+                <div class="key-scf" id="num0">0</div>
+                <div class="key-scf" id="dot">.</div>
+                <div class="action-btn operator" id="result">=</div>
+                <div class="key-scf operator" id="plus">+</div>
+            </div>
+            
+            <div class="section2">
+                <input type="radio" id="rad" name="angle">
+                <label for="rad" class="rad-select">Rad</label>
+                <input type="radio" id="deg" name="angle" checked>
+                <label for="deg" class="deg-select">Deg</label>
+                <div class="key-scf" id="radical">√</div>
+                <div class="key-scf" id="pow2">X<span class="symbol">2</span></div>
 
-            <div class="key-scf" id="pow">x<span class="symbol">y</span></div>
-            <div class="action-btn" id="ANS">ANS</div>
-            <div class="key-scf operator" id="remainder">%</div>
-            <div class="key-scf" id="dot">.</div>
-            <div class="key-scf" id="num0">0</div>
-            <div class="action-btn operator" id="result">=</div>
-            <div class="key-scf operator" id="plus">+</div>
+                <div class="key-scf" id="pi">ℼ</div>
+                <div class="key-scf" id="cos">cos</div>
+                <div class="key-scf" id="sin">sin</div>
+                <div class="key-scf" id="tan">tan</div>
 
+
+                <div class="key-scf" id="e">e</div>
+                <div class="key-scf" id="acos">acos</div>
+                <div class="key-scf" id="asin">asin</div>
+                <div class="key-scf" id="atan">atan</div>
+
+
+                <div class="key-scf" id="factorial">x!</div>
+                <div class="key-scf" id="exp">exp</div>
+                <div class="key-scf" id="ln">ln</div>
+                <div class="key-scf" id="log">log</div>
+
+
+                <div class="key-scf" id="pow">x<span class="symbol">y</span></div>
+                <div class="action-btn" id="ANS">ANS</div>
+                <div class="key-scf operator" id="remainder">%</div>
+            </div>
         </div>
     `;
     runScfCalc();
@@ -65,6 +75,7 @@ function openScfCalc() {
 
 function runScfCalc() {
 
+    bringHistory();
     const buttons = [ // buttons with their properties
         {
             name: "num0",
@@ -144,17 +155,17 @@ function runScfCalc() {
         {
             name: "cos",
             show: "cos(",
-            fermula: "Math.cos("
+            fermula: "setAngle(Math.cos,"
         },
         {
             name: "sin",
             show: "sin(",
-            fermula: "Math.sin("
+            fermula: "setAngle(Math.sin,"
         },
         {
             name: "tan",
             show: "tan(",
-            fermula: "Math.tan("
+            fermula: "setAngle(Math.tan"
         },
         {
             name: "divide",
@@ -170,17 +181,17 @@ function runScfCalc() {
         {
             name: "acos",
             show: "acos(",
-            fermula: "Math.acos("
+            fermula: "setAngleInv(Math.acos,"
         },
         {
             name: "asin",
             show: "asin(",
-            fermula: "Math.asin("
+            fermula: "setAngleInv(Math.asin,"
         },
         {
             name: "atan",
             show: "atan(",
-            fermula: "Math.atan("
+            fermula: "setAngleInv(Math.atan,"
         },
         {
             name: "multiply",
@@ -244,6 +255,7 @@ function runScfCalc() {
     const clearAll = document.querySelector("#clear-all");
     const clearLast = document.querySelector("#clear-last");
     const answer = document.querySelector("#ANS");
+    const radian = document.querySelector("#rad");
 
     let displayArray = [], fermula = [];
     let resultFlag = false;
@@ -413,4 +425,20 @@ function runScfCalc() {
         phrase.splice(factorialIndex + 1, phrase.indexOf("^(") + 1, `Math.pow(${factorialNumber},`);
         return phrase;
     }
+
+    function setAngle(callback, angle) {
+        if (!radian.checked) {
+            angle = angle * Math.PI / 180;
+        }
+        return callback(angle);
+    }
+
+    function setAngleInv(callback, value) {
+        let length = callback(value);
+        if (!radian.checked) {
+            length = length * 180 / Math.PI;
+        }
+        return length;
+    }
 }
+// runScfCalc();

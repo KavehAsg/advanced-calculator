@@ -7,7 +7,7 @@ const title = document.querySelector("h1");
 const actionSection = document.querySelector(".action-section");
 let deleteHistoryBtn = document.querySelectorAll(".delete");
 
-export { creatHistory, setLocalStorage, title, actionSection, closeHamMenu };
+export { creatHistory, setLocalStorage, title, actionSection, closeHamMenu , hideHistory , bringHistory };
 
 actionSection.addEventListener("click", () => {
     closeHamMenu();
@@ -28,7 +28,7 @@ function creatHistory(phrase) {
     const historyBox = document.createElement("div");
     historyBox.classList.add("history-box");
     historyBox.innerHTML = `
-    <p>${phrase}</p>
+    <p class="history-phrase">${phrase}</p>
     <div class="history-boxbtn">
         <div class="delete"><i class="fa-regular fa-trash-can"></i></div>
     </div>
@@ -43,6 +43,12 @@ function deleteHistoryBox(btn) {
     parent.remove();
 }
 
+function hideHistory(){
+    historyContainer.style.display = "none";
+}
+function bringHistory(){
+    historyContainer.style.display = "flex";
+}
 
 let historyArray = [];
 function setLocalStorage(data) {
@@ -98,12 +104,11 @@ function setTheme() { // switch for dark mode
         document.documentElement.style.setProperty('--primary-color', '#1565c0');
         document.documentElement.style.setProperty('--secondry-color', '#000');
         document.documentElement.style.setProperty('--action-color', '#bdbdbd');
-        document.documentElement.style.setProperty('--back-color', '#eeeeeed3');
+        document.documentElement.style.setProperty('--back-color', '#eeeeee');
         document.querySelector(".theme-btn").innerHTML = `<i class="fa-regular fa-moon"></i>`
     }
 }
 themeBtn.addEventListener("click", setTheme);
 
-// document.body.addEventListener("click" , closeHamMenu);
 
 // end of menues and navbar actions

@@ -5,8 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: all 0.2s linear;
-
+    transition: all 0.2s ease-in-out;
 }
 
 :root {
@@ -14,8 +13,7 @@
     --primary-color: #1565c0;
     --secondry-color: #000;
     --action-color: #bdbdbd;
-    --back-color: #eeeeeed3;
-    --budi: #eeeeee42;
+    --back-color: #eeeeee;
 }
 
 body {
@@ -24,6 +22,7 @@ body {
     background-color: var(--theme-color);
     padding: 0 32px;
 }
+
 
 /* navbar style */
 .ham-menu {
@@ -127,6 +126,7 @@ main {
     position: absolute;
     left: 0;
     transform: translateX(-130px);
+    font-size: 1.1rem;
 }
 
 .ham-list.active {
@@ -154,7 +154,7 @@ main {
     max-width: 310px;
     height: calc(100vh - 60px);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     backdrop-filter: blur(5px);
     align-items: center;
     gap: 5px;
@@ -163,7 +163,6 @@ main {
     transform: translateX(275px);
     z-index: 2;
     position: absolute;
-    transition: all 0.2s linear;
     right: 0px;
 }
 
@@ -254,3 +253,52 @@ main {
     position: relative;
     z-index: 0;
 }
+
+
+
+@media (min-width:481px) and (max-width:768px) {
+    body{
+        padding: 0 12px;
+    }
+    h1{
+        font-size: 1.2rem;
+    }
+    .history-container.active {
+        transform: translateX(15px);
+    }
+    .ham-list{
+        font-size: 1rem;
+        width: 110px;
+    }
+    .history-container{
+        width: 300px;
+        padding: 12px 4px;
+    }
+    .history-box{
+        width: 230px;
+    }
+}
+
+@media (min-width:280px) and (max-width:480px) {
+
+    body{
+        padding: 0 12px;
+    }
+    h1{
+        font-size: 1.2rem;
+    }
+    .history-container.active {
+        transform: translateX(15px);
+    }
+    .ham-list{
+        font-size: 1rem;
+        width: 110px;
+    }
+    .history-container{
+       position: fixed;
+    }
+    .history-box{
+        width: 230px;
+    }
+}
+

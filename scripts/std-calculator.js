@@ -1,14 +1,17 @@
-import { creatHistory, setLocalStorage, title, actionSection, closeHamMenu } from "./main.js";
+import { creatHistory, setLocalStorage, title, actionSection, closeHamMenu , bringHistory  } from "./main.js";
 
 document.querySelector("#Standard").addEventListener("click", openStdCalc); // open Standard calculator from menu
 function openStdCalc() {
+    bringHistory();
     closeHamMenu();
     title.innerText = "Standard Calculator";
     actionSection.className = "action-section std"
     actionSection.innerHTML = `
-    <input class="display-std" type="text" placeholder="0">
-            <div class="keys-std">
+    <div class="output-std">
+                <input class="display-std" type="text" placeholder="0">
+            </div>
 
+            <div class="keys-std">
                 <div class="key-std clear-all-std">AC</div>
                 <div class="key-std clear-last-std">C</div>
                 <div class="key-std operator-std" id="rem">%</div>
@@ -32,8 +35,8 @@ function openStdCalc() {
                 <div class="key-std numbers-std" style="grid-column: 1 / 3 ; border-radius: 40px;">0</div>
                 <div class="key-std numbers-std">.</div>
                 <div class="key-std equal-std" id="equal-std">=</div>
-
             </div>
+
     `;
     runStdCalc();
 }

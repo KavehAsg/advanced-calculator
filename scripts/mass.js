@@ -1,8 +1,9 @@
-import { title, actionSection , closeHamMenu } from "./main.js";
+import { title, actionSection , closeHamMenu , hideHistory} from "./main.js";
 import * as ConvertMass from "./modules/mass-func.js";
 
 document.querySelector("#Mass").addEventListener("click", openMassConverter);
 function openMassConverter() {
+    hideHistory();
     closeHamMenu();
     title.innerText = "Weight and Mass Converter";
     actionSection.className = "action-section converter"

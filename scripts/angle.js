@@ -1,9 +1,10 @@
-import { title, actionSection , closeHamMenu } from "./main.js";
+import { title, actionSection , closeHamMenu , hideHistory} from "./main.js";
 import * as ConvertAngle from "./modules/angle-func.js";
 
 
 document.querySelector("#Angle").addEventListener("click", openAngleConverter);
 function openAngleConverter() {
+    hideHistory();
     closeHamMenu();
     title.innerText = "Angle Converter";
     actionSection.className = "action-section converter"
