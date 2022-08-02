@@ -14,7 +14,8 @@
     --secondry-color: #000;
     --action-color: #bdbdbd;
     --back-color: #eeeeee;
-    --screen-height: 100vh;
+
+    --screen-height: 100%;
 }
 
 body {
@@ -22,7 +23,7 @@ body {
     max-height: var(--screen-height);
     background-color: var(--theme-color);
     padding: 0 32px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 
