@@ -126,7 +126,7 @@ main {
     gap: 5px;
     backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    padding: 8px;
+    padding: 8px 14px;
     border-radius: 0 20px 20px 0;
     z-index: 2;
     position: fixed;
@@ -136,7 +136,7 @@ main {
 }
 
 .ham-list.active {
-    transform: translateX(0);
+    transform: translateX(10px);
 }
 
 .hint-list {
