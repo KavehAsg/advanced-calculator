@@ -133,6 +133,9 @@
         align-items: center;
         gap: 15px;
     }
+    .output-std{
+        height: 90px;
+    }
     .display-std{
         height: 70px;
         font-size: 2rem;
