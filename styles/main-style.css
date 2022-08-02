@@ -109,8 +109,8 @@ h1 {
 
 main {
     width: 100%;
-    /* height: calc(var(--screen-height) - 60px); */
-    height: calc(100vh - 60px);
+    height: calc(var(--screen-height) - 60px);
+    /* height: calc(100vh - 60px); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -124,8 +124,8 @@ main {
 .ham-list {
     width: 130px;
     display: flex;
-    /* height: calc(var(--screen-height) - 60px); */
-    height: calc(100vh - 60px);
+    height: calc(var(--screen-height) - 60px);
+    /* height: calc(100vh - 60px); */
     flex-direction: column;
     justify-content: space-around;
     gap: 5px;
