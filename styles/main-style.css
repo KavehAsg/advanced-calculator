@@ -14,7 +14,7 @@
     --secondry-color: #000;
     --action-color: #bdbdbd;
     --back-color: #eeeeee;
-    --screen-height: 100%;
+    --screen-height: 100vh;
 }
 
 body {
@@ -106,9 +106,10 @@ h1 {
 
 main {
     width: 100%;
-    /* height: calc(100vh - 60px); */
+    max-height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     overflow-x: hidden;
     position: relative;
 }
@@ -157,7 +158,7 @@ main {
 /* history section */
 .history-container {
     max-width: 310px;
-    height: calc(100vh - 60px);
+    height: 100%;
     display: flex;
     justify-content: center;
     backdrop-filter: blur(5px);
