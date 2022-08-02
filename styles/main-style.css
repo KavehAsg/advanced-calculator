@@ -69,10 +69,11 @@ nav {
     border-radius: 50%;
     position: relative;
     cursor: pointer;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
     font-size: 1.5rem;
     color: var(--secondry-color);
 }
+
 
 #theme-toogle:checked+.theme-btn {
     transform: rotate(180deg);

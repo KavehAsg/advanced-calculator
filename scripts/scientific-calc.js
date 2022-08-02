@@ -38,9 +38,9 @@ function openScfCalc() {
             </div>
             
             <div class="section2">
-                <input type="radio" id="rad" name="angle">
+                <input type="radio" id="rad" name="angle" checked>
                 <label for="rad" class="rad-select">Rad</label>
-                <input type="radio" id="deg" name="angle" checked>
+                <input type="radio" id="deg" name="angle">
                 <label for="deg" class="deg-select">Deg</label>
                 <div class="key-scf" id="radical">√</div>
                 <div class="key-scf" id="pow2">X<span class="symbol">2</span></div>
@@ -441,4 +441,3 @@ function runScfCalc() {
         return length;
     }
 }
-// runScfCalc();
