@@ -24,7 +24,6 @@
     border-radius: 15px;
     background-color: var(--theme-color);
     color: var(--secondry-color);
-    background-color: aqua;
     position: static;
     top: 0;
     z-index: 2;
@@ -121,7 +120,7 @@
 
     .keys-std {
         grid-template-columns: repeat(4, 60px);
-        grid-template-rows: repeat(5, 70px);
+        grid-template-rows: repeat(5, 60px);
     }
 
     .action-section {
