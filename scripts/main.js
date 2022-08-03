@@ -9,7 +9,6 @@ let deleteHistoryBtn = document.querySelectorAll(".delete");
 
 export { creatHistory, setLocalStorage, title, actionSection, closeHamMenu , hideHistory , bringHistory };
 
-document.documentElement.style.setProperty('--screen-height' , `${visualViewport.height}px`);
 
 actionSection.addEventListener("click", () => {
     closeHamMenu();

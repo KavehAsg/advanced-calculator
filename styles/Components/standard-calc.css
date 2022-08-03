@@ -9,21 +9,13 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-}
-
-.output-std {
-    width: 60%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    gap: 70px;
 }
 
 .display-std {
     outline: none;
-    width: 100%;
-    height: 190px;
+    height: 100px;
+    width: 60%;
     font-size: 3em;
     padding: 20px;
     letter-spacing: 1px;
@@ -32,6 +24,10 @@
     border-radius: 15px;
     background-color: var(--theme-color);
     color: var(--secondry-color);
+    background-color: aqua;
+    position: static;
+    top: 0;
+    z-index: 2;
 }
 
 .display-std.error {
@@ -52,11 +48,11 @@
 }
 
 .keys-std {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     display: grid;
     grid-gap: 5px;
-    grid-template-columns: repeat(4, 80px);
-    grid-template-rows: repeat(5, 80px);
+    grid-template-columns: repeat(4, 90px);
+    grid-template-rows: repeat(5, 90px);
 }
 
 .numbers-std {
@@ -98,6 +94,7 @@
     .display-std{
         height: 60px;
         font-size: 2.5rem;
+        width: 50%;
     }
 }
 
@@ -113,34 +110,28 @@
         gap: 15px;
     }
     .display-std{
-        height: 70px;
-    }
-    .output-std{
         width: 70%;
+        height: 60px;
+        font-size: 2rem;
     }
+   
 }
 
 @media (min-width:280px) and (max-width:480px) {
 
     .keys-std {
         grid-template-columns: repeat(4, 60px);
-        grid-template-rows: repeat(5, 60px);
+        grid-template-rows: repeat(5, 70px);
     }
 
     .action-section {
         flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-    }
-    .output-std{
-        height: 100%;
+        justify-content: center;
     }
     .display-std{
-        height: 90%;
-        font-size: 2rem;
-    }
-    .output-std{
         width: 80%;
+        height: 50px;
+        font-size: 2rem;
     }
 
 }
