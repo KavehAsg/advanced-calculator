@@ -112,13 +112,14 @@
 
     .std {
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-evenly;
         padding: 10% 0;
     }
     .display-std{
         width: 80%;
         height: 50px;
         font-size: 2rem;
+        background-color: aqua;
     }
 
 }

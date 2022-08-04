@@ -440,4 +440,3 @@ function runScfCalc() {
     }
 }
 
-runScfCalc();
