@@ -14,8 +14,6 @@
     --secondry-color: #000;
     --action-color: #bdbdbd;
     --back-color: #eeeeeed7;
-
-    --screen-height: 100vh;
 }
 
 body {
@@ -122,7 +120,7 @@ main {
 .ham-list {
     width: 130px;
     display: flex;
-    height: calc(var(--screen-height) - 60px);
+    height: calc(100vh - 60px);
     flex-direction: column;
     align-items: start;
     gap: 5px;
@@ -176,7 +174,7 @@ main {
 /* history section */
 .history-container {
     max-width: 310px;
-    height: calc(var(--screen-height) - 60px);
+    height: calc(100vh - 60px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -327,7 +325,7 @@ main {
 
     .ham-list {
         font-size: 1rem;
-        width: 110px;
+        width: 120px;
         gap: 15px;
     }
 
