@@ -8,8 +8,13 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    gap: 70px;
+    gap: 60px;
+    height: calc(100vh - 60px);
+    overflow: auto;
+}
+
+.std::-webkit-scrollbar{
+    display: none;
 }
 
 .display-std {
@@ -24,7 +29,7 @@
     border-radius: 15px;
     background-color: var(--theme-color);
     color: var(--secondry-color);
-    position: static;
+    position: sticky;
     top: 0;
     z-index: 2;
 }
@@ -104,7 +109,7 @@
         grid-template-rows: repeat(5, 70px);
     }
 
-    .action-section {
+    .std {
         flex-direction: column;
         gap: 15px;
     }
@@ -112,6 +117,7 @@
         width: 70%;
         height: 60px;
         font-size: 2rem;
+        /* margin-top: 300px; */
     }
    
 }
@@ -123,7 +129,7 @@
         grid-template-rows: repeat(5, 60px);
     }
 
-    .action-section {
+    .std {
         flex-direction: column;
         justify-content: center;
     }
