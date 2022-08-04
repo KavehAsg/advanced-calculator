@@ -1,6 +1,7 @@
 const hamMenu = document.querySelector(".ham-menu");
 const hamList = document.querySelector(".ham-list");
 const historyBtn = document.querySelector(".history-menubtn");
+const historyBtnIcon = document.querySelector(".hisbtn");
 const historyContainer = document.querySelector(".history-container")
 const themeBtn = document.querySelector("#theme-toogle");
 const title = document.querySelector("h1");
@@ -88,7 +89,7 @@ function closeHistory() {
 }
 historyBtn.addEventListener("click", () => { //action for history menu 
     historyContainer.classList.toggle("active");
-    historyBtn.classList.toggle("active");
+    historyBtnIcon.classList.toggle("active");
 });
 
 
