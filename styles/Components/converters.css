@@ -1,13 +1,15 @@
 .converter{
+    width: 100%;
+    height: calc(100vh - 60px);
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
 }
 
 .first-section , .second-section{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 70px;
 }
@@ -20,7 +22,7 @@
     border-radius: 5px;
     padding: 10px 5px;
     position: relative;
-    top: -70px;
+    /* top: -70px; */
     outline: none;
 }
 
