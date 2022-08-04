@@ -16,7 +16,7 @@ actionSection.addEventListener("click", () => {
     closeHistory();    
 });
 
-function selectNewBtns() {
+function selectNewBtns() { // بعد از هربار ایجاد تاریخچه جدید و المان های ساخته شده شناسایی میشوند
     deleteHistoryBtn = document.querySelectorAll(".delete");
     deleteHistoryBtn.forEach(btn => btn.addEventListener("click", (event) => {
         deleteHistoryBox(event);

@@ -1,4 +1,4 @@
-import { creatHistory, setLocalStorage, title, actionSection, closeHamMenu , bringHistory } from "./main.js";
+import { creatHistory, setLocalStorage, title, actionSection, closeHamMenu, bringHistory } from "./main.js";
 
 document.querySelector("#Standard").addEventListener("click", openStdCalc); // open Standard calculator from menu
 function openStdCalc() {
@@ -51,8 +51,11 @@ function runStdCalc() {
 
     const calcPattern = /^[-+]?[0-9]+([-+*/%.]+[-+]?[0-9]+)*$/;
     const resultPattern = /([\.]\d?)+[0]{5}/;
-    let resultFlag = 0;
-
+    let resultFlag = 0; /*
+     توسط این فلگ مشخص میکنیم کاربر حداقل یکبار قبل از عملیات جدید گزینه = را زده است
+     این فلگ با یکبار وارد کردن عدد جدید ریست میشود و مقدار ماشین حساب صفر مبشود در غیر این صورت ادامه
+     عدد قبل وارد عملیات جدید میشود
+    */
     function inputNum(event) {
         const inputText = event.target.innerText;
         if (inputText !== ".") {
@@ -111,7 +114,7 @@ function runStdCalc() {
     }
     clearLast.addEventListener("click", clearLastFunc);
 
-    function error(){
+    function error() {
         display.classList.toggle("error");
         setTimeout(() => {
             display.classList.toggle("error");
@@ -120,5 +123,5 @@ function runStdCalc() {
 
 }
 
-// runStdCalc();
+runStdCalc();
 

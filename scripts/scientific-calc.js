@@ -246,6 +246,8 @@ function runScfCalc() {
             type: "operator"
         }
     ];
+
+
     const operators = ["-", "+", "*", "/", "%"];
 
     const input = document.querySelectorAll(".key-scf");
@@ -256,16 +258,17 @@ function runScfCalc() {
     const answer = document.querySelector("#ANS");
     const radian = document.querySelector("#rad");
 
-    let displayArray = [], fermula = [];
+    let displayArray = [], fermula = []; // با این دو ارایه مقادیر نمایشی و مقادیر به فرمت اجرایی جاوا اسکریپت رو از هم متمایز میکنیم
     let resultFlag = false;
     let ans = 0;
     const resultPattern = /([\.]\d?)+[0]{5}/;
+    // ریجکس برای شناسایی مقادیر غیرمعقول
 
     input.forEach(btn => btn.addEventListener("click", btnAction));
     function btnAction(event) {
         const btnId = event.target.id;
         buttons.forEach(target => {
-            if (target.name === btnId && btnId === "dot") {
+            if (target.name === btnId && btnId === "dot") { // جلوگیری از تکرار . پشت سر هم
                 if (fermula[fermula.length - 1] === ".") {
                     error();
                 }
@@ -273,7 +276,7 @@ function runScfCalc() {
                     fermula.push(target.fermula);
                     displayArray.push(target.show);
                 }
-            } else if (target.name === btnId && target.type === "operator") {
+            } else if (target.name === btnId && target.type === "operator") { // جلوگیری از تکرار نابجای عملگرها
                 if (operators.includes(fermula[fermula.length - 1])) {
                     error();
                 } else {
@@ -281,7 +284,7 @@ function runScfCalc() {
                     displayArray.push(target.show);
                     resultFlag = false;
                 }
-            } else if (target.name === btnId && target.type !== "operator") {
+            } else if (target.name === btnId) {
                 if (resultFlag) {
                     displayArray = [target.show];
                     fermula = [target.fermula];
@@ -291,10 +294,10 @@ function runScfCalc() {
                 }
             }
             display.innerText = displayArray.join('');
-            if (fermula.includes("!")) {
+            if (fermula.includes("!")) { // تشخیص وجود فاکتوریل در عبارت و اجرای فانکشن مربوط
                 fermula = getFactorialNum(fermula);
             }
-            else if (fermula.includes("^(")) {
+            else if (fermula.includes("^(")) { // تشخیص وجود توان در عبارت
                 fermula = getPowBaseNumber(fermula);
             }
         })
@@ -358,9 +361,13 @@ function runScfCalc() {
     }
 
     function getFactorialNum(phrase) {
+        /*
+       وظیفه این فانکشن استخراج عدد فاکتوریل از عبارت ورودی و تبدیل ان به فرمت قابل اجرا توسط جاوا اسکریپت
+        است
+        */
         let factorialIndex = phrase.indexOf("!");
         let factorialNumber = [];
-        let parenthesesCounter = 0;
+        let parenthesesCounter = 0; // توسط این متغییر پرانتز های داخل عبارت را تشخیص میدهیم
         factorialIndex--;
         for (factorialIndex; factorialIndex >= 0; factorialIndex--) {
             if (phrase[factorialIndex].includes(")")) {
@@ -411,6 +418,9 @@ function runScfCalc() {
     }
 
     function getPowBaseNumber(phrase) {
+        /*
+        توسط این فانکشن عدد پایه توان را به فرمت قابل اجرا استخراج میکنیم
+        */
         let factorialIndex = phrase.indexOf("^(");
         let factorialNumber = [];
         let parenthesesCounter = 0;
@@ -432,14 +442,14 @@ function runScfCalc() {
         return phrase;
     }
 
-    function setAngle(callback, angle) {
+    function setAngle(callback, angle) { // تعیین زاویه ماشین حساب
         if (!radian.checked) {
             angle = angle * Math.PI / 180;
         }
         return callback(angle);
     }
 
-    function setAngleInv(callback, value) {
+    function setAngleInv(callback, value) { // تعیین زاویه برای متود های acos , asin ...
         let length = callback(value);
         if (!radian.checked) {
             length = length * 180 / Math.PI;
@@ -455,6 +465,5 @@ function runScfCalc() {
     }
 }
 
-runScfCalc();
 
 
