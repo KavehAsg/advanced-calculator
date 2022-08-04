@@ -1,4 +1,4 @@
-import { creatHistory, setLocalStorage, title, actionSection, closeHamMenu , bringHistory  } from "./main.js";
+import { creatHistory, setLocalStorage, title, actionSection, closeHamMenu , bringHistory } from "./main.js";
 
 document.querySelector("#Standard").addEventListener("click", openStdCalc); // open Standard calculator from menu
 function openStdCalc() {
@@ -76,10 +76,7 @@ function runStdCalc() {
             resultFlag = 0;
         }
         else if (!calcPattern.test(display.value) && display.value !== "-") {
-            display.classList.toggle("error");
-            setTimeout(() => {
-                display.classList.toggle("error");
-            }, 350);
+            error();
         }
     }
     operator.forEach(item => item.addEventListener("click", inputOperator));
@@ -97,10 +94,7 @@ function runStdCalc() {
             display.value = result;
             resultFlag = 1; // set flag to show = has pressed
         } else {
-            display.classList.toggle("error");
-            setTimeout(() => {
-                display.classList.toggle("error");
-            }, 800);
+            error();
         }
     }
     equal.addEventListener("click", result);
@@ -117,7 +111,14 @@ function runStdCalc() {
     }
     clearLast.addEventListener("click", clearLastFunc);
 
+    function error(){
+        display.classList.toggle("error");
+        setTimeout(() => {
+            display.classList.toggle("error");
+        }, 800);
+    }
+
 }
 
-runStdCalc();
+// runStdCalc();
 

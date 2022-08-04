@@ -246,6 +246,7 @@ function runScfCalc() {
             type: "operator"
         }
     ];
+    const operators = ["-", "+", "*", "/", "%"];
 
     const input = document.querySelectorAll(".key-scf");
     const display = document.querySelector(".display-scf");
@@ -264,11 +265,23 @@ function runScfCalc() {
     function btnAction(event) {
         const btnId = event.target.id;
         buttons.forEach(target => {
-            if (target.name === btnId && target.type === "operator") {
-                fermula.push(target.fermula);
-                displayArray.push(target.show);
-                resultFlag = false;
-            } else if (target.name === btnId) {
+            if (target.name === btnId && btnId === "dot") {
+                if (fermula[fermula.length - 1] === ".") {
+                    error();
+                }
+                else {
+                    fermula.push(target.fermula);
+                    displayArray.push(target.show);
+                }
+            } else if (target.name === btnId && target.type === "operator") {
+                if (operators.includes(fermula[fermula.length - 1])) {
+                    error();
+                } else {
+                    fermula.push(target.fermula);
+                    displayArray.push(target.show);
+                    resultFlag = false;
+                }
+            } else if (target.name === btnId && target.type !== "operator") {
                 if (resultFlag) {
                     displayArray = [target.show];
                     fermula = [target.fermula];
@@ -310,10 +323,7 @@ function runScfCalc() {
                 ans = result;
             }
         } catch {
-            display.classList.toggle("error");
-            setTimeout(() => {
-                display.classList.toggle("error");
-            }, 800);
+            error();
         }
     }
 
@@ -348,7 +358,6 @@ function runScfCalc() {
     }
 
     function getFactorialNum(phrase) {
-        const operator = ["-", "+", "*", "/", "%"];
         let factorialIndex = phrase.indexOf("!");
         let factorialNumber = [];
         let parenthesesCounter = 0;
@@ -362,7 +371,7 @@ function runScfCalc() {
                 parenthesesCounter -= 1;
                 factorialNumber.unshift(phrase[factorialIndex]);
             }
-            else if (operator.includes(phrase[factorialIndex]) && parenthesesCounter == 0) break;
+            else if (operators.includes(phrase[factorialIndex]) && parenthesesCounter == 0) break;
             else factorialNumber.unshift(phrase[factorialIndex]);
         }
         factorialNumber = factorialNumber.join("");
@@ -402,7 +411,6 @@ function runScfCalc() {
     }
 
     function getPowBaseNumber(phrase) {
-        const operator = ["-", "+", "*", "/", "%"];
         let factorialIndex = phrase.indexOf("^(");
         let factorialNumber = [];
         let parenthesesCounter = 0;
@@ -416,7 +424,7 @@ function runScfCalc() {
                 parenthesesCounter -= 1;
                 factorialNumber.unshift(phrase[factorialIndex]);
             }
-            else if (operator.includes(phrase[factorialIndex]) && parenthesesCounter == 0) break;
+            else if (operators.includes(phrase[factorialIndex]) && parenthesesCounter == 0) break;
             else factorialNumber.unshift(phrase[factorialIndex]);
         }
         factorialNumber = factorialNumber.join("");
@@ -438,5 +446,15 @@ function runScfCalc() {
         }
         return length;
     }
+
+    function error(){
+        display.classList.toggle("error");
+        setTimeout(() => {
+            display.classList.toggle("error");
+        }, 800);
+    }
 }
+
+runScfCalc();
+
 

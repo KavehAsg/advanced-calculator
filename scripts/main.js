@@ -8,7 +8,8 @@ const title = document.querySelector("h1");
 const actionSection = document.querySelector(".action-section");
 let deleteHistoryBtn = document.querySelectorAll(".delete");
 
-export { creatHistory, setLocalStorage, title, actionSection, closeHamMenu , hideHistory , bringHistory };
+export { creatHistory, setLocalStorage, title, actionSection,
+         closeHamMenu , hideHistory , bringHistory };
 
 actionSection.addEventListener("click", () => {
     closeHamMenu();
@@ -110,6 +111,5 @@ function setTheme() { // switch for dark mode
     }
 }
 themeBtn.addEventListener("click", setTheme);
-
 
 // end of menues and navbar actions
