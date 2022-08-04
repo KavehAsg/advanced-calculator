@@ -6,68 +6,66 @@ function openScfCalc() {
     title.innerText = "Scientific Calculator";
     actionSection.className = "action-section scf-calc"
     actionSection.innerHTML = `
-            <div class="output-scf">
-            <div class="display-scf">0</div>
-            </div>
+    <div class="display-scf">0</div>
 
-        <div class="input-scf">
-                <div class="section1">
-                <div class="key-scf" id="pr(">(</div>
-                <div class="key-scf" id="pr)">)</div>
-                <div class="action-btn" id="clear-last">C</div>
-                <div class="action-btn operator" id="clear-all">AC</div>
+    <div class="input-scf">
+        <div class="section1">
+            <div class="key-scf" id="pr(">(</div>
+            <div class="key-scf" id="pr)">)</div>
+            <div class="action-btn" id="clear-last">C</div>
+            <div class="action-btn operator" id="clear-all">AC</div>
 
-                <div class="key-scf" id="num7">7</div>
-                <div class="key-scf" id="num8">8</div>
-                <div class="key-scf" id="num9">9</div>
-                <div class="key-scf operator" id="divide">÷</div>
+            <div class="key-scf" id="num7">7</div>
+            <div class="key-scf" id="num8">8</div>
+            <div class="key-scf" id="num9">9</div>
+            <div class="key-scf operator" id="divide">÷</div>
 
-                <div class="key-scf" id="num4">4</div>
-                <div class="key-scf" id="num5">5</div>
-                <div class="key-scf" id="num6">6</div>
-                <div class="key-scf operator" id="multiply">×</div>
+            <div class="key-scf" id="num4">4</div>
+            <div class="key-scf" id="num5">5</div>
+            <div class="key-scf" id="num6">6</div>
+            <div class="key-scf operator" id="multiply">×</div>
 
-                <div class="key-scf" id="num1">1</div>
-                <div class="key-scf" id="num2">2</div>
-                <div class="key-scf" id="num3">3</div>
-                <div class="key-scf operator" id="minus">-</div>
-                <div class="key-scf" id="num0">0</div>
-                <div class="key-scf" id="dot">.</div>
-                <div class="action-btn operator" id="result">=</div>
-                <div class="key-scf operator" id="plus">+</div>
-            </div>
-            
-            <div class="section2">
-                <input type="radio" id="rad" name="angle" checked>
-                <label for="rad" class="rad-select">Rad</label>
-                <input type="radio" id="deg" name="angle">
-                <label for="deg" class="deg-select">Deg</label>
-                <div class="key-scf" id="radical">√</div>
-                <div class="key-scf" id="pow2">X<span class="symbol">2</span></div>
-
-                <div class="key-scf" id="pi">ℼ</div>
-                <div class="key-scf" id="cos">cos</div>
-                <div class="key-scf" id="sin">sin</div>
-                <div class="key-scf" id="tan">tan</div>
-
-
-                <div class="key-scf" id="e">e</div>
-                <div class="key-scf" id="acos">acos</div>
-                <div class="key-scf" id="asin">asin</div>
-                <div class="key-scf" id="atan">atan</div>
-
-
-                <div class="key-scf" id="factorial">x!</div>
-                <div class="key-scf" id="exp">exp</div>
-                <div class="key-scf" id="ln">ln</div>
-                <div class="key-scf" id="log">log</div>
-
-
-                <div class="key-scf" id="pow">x<span class="symbol">y</span></div>
-                <div class="action-btn" id="ANS">ANS</div>
-                <div class="key-scf operator" id="remainder">%</div>
-            </div>
+            <div class="key-scf" id="num1">1</div>
+            <div class="key-scf" id="num2">2</div>
+            <div class="key-scf" id="num3">3</div>
+            <div class="key-scf operator" id="minus">-</div>
+            <div class="key-scf" id="num0">0</div>
+            <div class="key-scf" id="dot">.</div>
+            <div class="action-btn operator" id="result">=</div>
+            <div class="key-scf operator" id="plus">+</div>
         </div>
+
+        <div class="section2">
+            <input type="radio" id="rad" name="angle" checked>
+            <label for="rad" class="rad-select">Rad</label>
+            <input type="radio" id="deg" name="angle">
+            <label for="deg" class="deg-select">Deg</label>
+            <div class="key-scf" id="radical">√</div>
+            <div class="key-scf" id="pow2">X<span class="symbol">2</span></div>
+
+            <div class="key-scf" id="pi">ℼ</div>
+            <div class="key-scf" id="cos">cos</div>
+            <div class="key-scf" id="sin">sin</div>
+            <div class="key-scf" id="tan">tan</div>
+
+
+            <div class="key-scf" id="e">e</div>
+            <div class="key-scf" id="acos">acos</div>
+            <div class="key-scf" id="asin">asin</div>
+            <div class="key-scf" id="atan">atan</div>
+
+
+            <div class="key-scf" id="factorial">x!</div>
+            <div class="key-scf" id="exp">exp</div>
+            <div class="key-scf" id="ln">ln</div>
+            <div class="key-scf" id="log">log</div>
+
+
+            <div class="key-scf" id="pow">x<span class="symbol">y</span></div>
+            <div class="action-btn" id="ANS">ANS</div>
+            <div class="key-scf operator" id="remainder">%</div>
+        </div>
+    </div>
     `;
     runScfCalc();
 }
@@ -441,3 +439,5 @@ function runScfCalc() {
         return length;
     }
 }
+
+runScfCalc();

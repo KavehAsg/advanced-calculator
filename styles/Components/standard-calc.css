@@ -13,10 +13,6 @@
     overflow: auto;
 }
 
-.std::-webkit-scrollbar{
-    display: none;
-}
-
 .display-std {
     outline: none;
     height: 100px;
@@ -73,20 +69,6 @@
     color: var(--action-color);
 }
 
-
-@keyframes error {
-    50% {
-        -webkit-box-shadow: 0px 0px 6px 1px rgba(255, 0, 0, 0.94);
-        box-shadow: 0px 0px 6px 1px rgba(255, 0, 0, 0.94);
-    }
-
-    100% {
-        -webkit-box-shadow: 0px 0px 0px 0px rgba(255, 0, 0, 0.94);
-        box-shadow: 0px 0px 0px 0px rgba(255, 0, 0, 0.94);
-    }
-}
-
-
 @media (min-width:769px) and (max-width:1100px) {
     /*laptop size*/
 
@@ -117,7 +99,6 @@
         width: 70%;
         height: 60px;
         font-size: 2rem;
-        /* margin-top: 300px; */
     }
    
 }
@@ -131,6 +112,7 @@
 
     .std {
         flex-direction: column;
+        justify-content: space-between;
         justify-content: center;
     }
     .display-std{

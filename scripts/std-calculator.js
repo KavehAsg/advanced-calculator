@@ -7,9 +7,7 @@ function openStdCalc() {
     title.innerText = "Standard Calculator";
     actionSection.className = "action-section std"
     actionSection.innerHTML = `
-    <div class="output-std">
-                <input class="display-std" type="text" placeholder="0">
-            </div>
+    <input class="display-std" type="text" placeholder="0">
 
             <div class="keys-std">
                 <div class="key-std clear-all-std">AC</div>
