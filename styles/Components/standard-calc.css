@@ -55,6 +55,7 @@
     grid-gap: 5px;
     grid-template-columns: repeat(4, 80px);
     grid-template-rows: repeat(5, 80px);
+    user-select: none;
 }
 
 .numbers-std {

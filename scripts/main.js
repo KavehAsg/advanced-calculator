@@ -6,24 +6,25 @@ const historyContainer = document.querySelector(".history-container")
 const themeBtn = document.querySelector("#theme-toogle");
 const title = document.querySelector("h1");
 const actionSection = document.querySelector(".action-section");
-let deleteHistoryBtn = document.querySelectorAll(".delete");
+let historySection = document.querySelector(".history");
 
 export { creatHistory, setLocalStorage, title, actionSection,
          closeHamMenu , hideHistory , bringHistory };
 
-actionSection.addEventListener("click", () => {
+
+actionSection.addEventListener("click", () => { // close menus by clicking on main screen
     closeHamMenu();
     closeHistory();    
 });
 
-function selectNewBtns() { // بعد از هربار ایجاد تاریخچه جدید و المان های ساخته شده شناسایی میشوند
-    deleteHistoryBtn = document.querySelectorAll(".delete");
-    deleteHistoryBtn.forEach(btn => btn.addEventListener("click", (event) => {
+
+historySection.addEventListener("click" , (event) => { // set action to delete buttons in history boxes
+    if(event.target.classList[2] === "delete"){
         deleteHistoryBox(event);
         removeLocalStorage(event);
-    }));
-}
-selectNewBtns();
+    }
+});
+
 
 
 function creatHistory(phrase) {
@@ -35,15 +36,12 @@ function creatHistory(phrase) {
         <i class="fa-regular fa-trash-can delete"></i>
     </div>
     `;
-    document.querySelector(".history").appendChild(historyBox);
-    selectNewBtns();
+    historySection.appendChild(historyBox);
 }
-
 
 function deleteHistoryBox(btn) {
     const parent = btn.target.parentElement.parentElement;
     parent.remove();
-
 }
 
 function hideHistory(){
@@ -67,9 +65,9 @@ function setLocalStorage(data) {
 
 
 function removeLocalStorage(btn) {
-    const phrase = btn.target.parentElement.parentElement.siblingElement;
+    const phrase = btn.target.parentElement.previousElementSibling.innerText;
     const tempArray = JSON.parse(localStorage.getItem("S-D"));
-    tempArray.splice(tempArray.indexOf(phrase), 1);
+    tempArray.splice(tempArray.indexOf(phrase), 1 );
     localStorage.setItem("S-D", JSON.stringify(tempArray));
 }
 
@@ -113,4 +111,3 @@ function setTheme() { // switch for dark mode
 }
 themeBtn.addEventListener("click", setTheme);
 
-// end of menues and navbar actions
