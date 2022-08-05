@@ -204,12 +204,13 @@ main::-webkit-scrollbar {
     }
 
     .display-scf {
+        min-height: 60px;
         width: 80%;
         font-size: 2rem;
         margin-top: 10px;
         word-wrap: unset;
         overflow-x: auto;
-        overflow-y: unset;
+        overflow-y: hidden;
     }
     .scf-calc {
         flex-direction: column;
