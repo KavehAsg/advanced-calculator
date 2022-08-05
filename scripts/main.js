@@ -20,7 +20,7 @@ function selectNewBtns() { // بعد از هربار ایجاد تاریخچه �
     deleteHistoryBtn = document.querySelectorAll(".delete");
     deleteHistoryBtn.forEach(btn => btn.addEventListener("click", (event) => {
         deleteHistoryBox(event);
-        removeLocalStorage(event);
+        // removeLocalStorage(event);
     }));
 }
 selectNewBtns();
@@ -32,7 +32,7 @@ function creatHistory(phrase) {
     historyBox.innerHTML = `
     <p class="history-phrase">${phrase}</p>
     <div class="history-boxbtn">
-        <div class="delete"><i class="fa-regular fa-trash-can"></i></div>
+        <i class="fa-regular fa-trash-can delete"></i>
     </div>
     `;
     document.querySelector(".history").appendChild(historyBox);
@@ -41,8 +41,11 @@ function creatHistory(phrase) {
 
 
 function deleteHistoryBox(btn) {
-    const parent = btn.target.parentElement.parentElement.parentElement;
-    parent.remove();
+    const parent = btn.target.parentElement;
+    const parent2 = parent.parentElement;
+    console.log(parent);
+    // parent.remove();
+
 }
 
 function hideHistory(){

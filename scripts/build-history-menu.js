@@ -8,7 +8,7 @@
             historyBox.innerHTML = `
             <p class="history-phrase">${item}</p>
             <div class="history-boxbtn">
-                <div class="delete"><i class="fa-regular fa-trash-can"></i></div>
+                <i class="fa-regular fa-trash-can delete"></i>
             </div>
             `;
             document.querySelector(".history").appendChild(historyBox);
