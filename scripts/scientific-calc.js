@@ -464,6 +464,3 @@ function runScfCalc() {
         }, 800);
     }
 }
-
-
-

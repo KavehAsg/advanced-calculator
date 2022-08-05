@@ -91,7 +91,6 @@ main::-webkit-scrollbar {
     color: var(--secondry-color);
     background-color: var(--theme-color);
     width: 70%;
-    padding: 16px ;
     min-height: 70px;
     font-size: 3rem;
     word-wrap: break-word;
@@ -100,7 +99,7 @@ main::-webkit-scrollbar {
     z-index: 2;
     position: sticky;
     top: 0;
-    /* background-color: aqua; */
+    padding: 12px ;
 }
 
 .display-scf.error {
@@ -204,14 +203,18 @@ main::-webkit-scrollbar {
     }
 
     .display-scf {
-        min-height: 60px;
+        height: 90px;
         width: 80%;
-        font-size: 2rem;
+        font-size: 1.7rem;
         margin-top: 10px;
         word-wrap: unset;
-        overflow-x: auto;
-        overflow-y: hidden;
-    }
+        overflow: scroll;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        padding-left: 8px;
+        white-space: nowrap;
+    } 
     .scf-calc {
         flex-direction: column;
         justify-content: space-between;
